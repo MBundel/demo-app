@@ -70,12 +70,6 @@ const Pega = ({ selectedFirmName }) => {
                   "height":"1rem",
                   "width":"1rem"
                 }
-      
-                
-              
-              
-               
-                
               },
             "base": {
               "palette": {
