@@ -1,0 +1,26 @@
+@import "./colorSchemes.scss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.app {
+  &_uniqa {
+    background-color: $uniqaLightBlue;
+    margin: 0;
+    padding-bottom: 350px;
+  }
+  &_zurich {
+    color: $zurichBlue;
+    background-color: $zurichBeige;
+    padding-bottom: 350px;
+    & a:visited {
+      color: $zurichBlue;
+    }
+  }
+}

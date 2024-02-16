@@ -1,0 +1,45 @@
+@import "../colorSchemes.scss";
+
+.contentFS {
+  &_allianz {
+    margin-top: 40px;
+    display: block;
+    justify-content: left;
+    & div {
+      margin-top: -10px;
+    }
+  }
+  &_uniqa {
+  }
+}
+
+.aFS {
+  &_allianz {
+    color: $allianzMiddleBlue;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 550;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+
+    &:visited {
+      color: $allianzMiddleBlue;
+      text-decoration: none;
+    }
+    &:hover {
+      color: $allianzLightBlue;
+    }
+  }
+  &_uniqa {
+    color: $uniqaGrey;
+
+    &:visited {
+      color: $uniqaGrey;
+      text-decoration: none;
+    }
+    &:hover {
+      color: $uniqaBlue;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import './colorSchemes.scss';
+
+
+.pega{
+    &_content{
+        display: flex;
+        justify-content: center;
+        max-width: 1400px;
+        margin: auto;
+        padding: 50px 50px 50px 50px;
+        
+    }
+    &_container{
+
+
+        &_uniqa{
+            background-color: $uniqaWhite;
+            max-width: 1480px;
+            margin: auto;
+        }
+        &_allianz{
+            background-color: $allianzWhite;
+            max-width: 1480px;
+            margin: auto;
+        }
+        &_zurich{
+            background-color: $zurichBeige;
+            max-width: 1480px;
+            margin: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    body{
+        line-height: 0;
+        
+    }
+    .pega{
+        &_content{
+           
+            padding: 0;
+        }
+    }    
+}

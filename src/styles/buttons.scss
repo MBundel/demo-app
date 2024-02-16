@@ -1,0 +1,109 @@
+@import "./colorSchemes.scss";
+
+@mixin uniqa_button_strong {
+  background-color: $uniqaBlue;
+  color: $uniqaWhite;
+  font-size: 15px;
+  padding: 5px;
+  border: none;
+  min-width: 106px;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Verdana";
+  margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+  
+
+  &:hover {
+    background-color: $uniqaLightBlue;
+  }
+}
+
+@mixin uniqa_button_regular {
+  width: 200px;
+  height: 40px;
+  padding: 16px;
+  color: #005ca9;
+  background-color: white;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #005ca9;
+  color: #005ca9;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Verdana";
+}
+.button-regular:hover {
+  color: #008cff;
+}
+
+@mixin allianz_button_strong {
+    color: $uniqaWhite;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    width: 320px;
+    height: 45px;
+    margin: 30px auto;
+    background-color: $allianzLightBlue;
+    justify-content: center;
+    
+  
+    &:hover {
+      background-color: $allianzMiddleBlue;
+    }
+  }
+@mixin zurich_button_strong {
+    color: $uniqaWhite;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: inherit;
+    letter-spacing: -1px;
+    justify-content: center;
+    border: none;
+    border-radius: 30px;
+    padding: 0px 20px;
+    width: 180px;
+    height: 56px;
+    margin: 10px auto;
+    background-color: $zurichBlue;
+    justify-content: left;
+    
+  
+    &:hover {
+      background-color: $zurichLightBlue;
+    }
+  }
+  @mixin zurich_button_regular {
+    color: $uniqaWhite;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: inherit;
+    letter-spacing: -1px;
+   
+    border: none;
+    border-radius: 30px;
+    padding: 0px 20px;
+    width: 200px;
+    height: 56px;
+    margin: 10px auto;
+    background-color: $zurichLightBlue;
+    justify-content: left;
+    
+  
+    &:hover {
+      background-color: $zurichBlue;
+    }
+  }
