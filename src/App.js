@@ -32,7 +32,7 @@ function App() {
       <Router>
         <Nav selectedFirmName={selectedFirmName}/>
         <Routes>
-          <Route path="/"       element={<Home                                        />} />
+          <Route path="/"       element={<Home    selectedFirmName={selectedFirmName} />} />
           <Route path="/login"  element={<Login   selectedFirmName={selectedFirmName} />} />
           <Route path="/pega"   element={<Pega    selectedFirmName={selectedFirmName} />} /> 
         </Routes>
