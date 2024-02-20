@@ -43,7 +43,7 @@ const Pega = ({ selectedFirmName }) => {
       }
     };
   }
-}, [selectedFirmName, isPegaVisible]);
+}, [isPegaVisible]);
 
 
   useEffect(() => {
