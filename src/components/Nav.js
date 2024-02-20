@@ -1,12 +1,17 @@
-import React from "react";
+import   { React, useState, useEffect }from "react";
 import { uniqa, allianz, zurich } from "../records/insuranceFirms";
 import '../styles/styles.scss'
  
-  import { Link } from 'react-router-dom';
+  import { Link, useLocation  } from 'react-router-dom';
 
 
 
 function Navbar({selectedFirmName}) {
+
+  const [currentPath, setCurrentPath] = useState('');
+  const location = useLocation();
+
+
  
   const firms = { uniqa, allianz, zurich };
   const seF = selectedFirmName;
@@ -17,7 +22,10 @@ function Navbar({selectedFirmName}) {
   
   
 console.log( firms[seF].name + " --------------------------------------------")
- 
+
+   useEffect(() => {
+    setCurrentPath(location.pathname);
+  }, [location.pathname]);
 
   return (
     <>
@@ -31,7 +39,11 @@ console.log( firms[seF].name + " --------------------------------------------")
     <li><a href="#unternehmen">Unternehmen</a></li> */}
   
     <li><a href="#suche"><span className="resp">Suche</span></a></li>
-    <li><Link to="/login"><span className="resp">Login</span></Link></li>
+    {currentPath === '/pega' ? (
+          <li><Link to="/login"><span className="resp">Logout</span></Link></li>
+        ) : (
+          <li><Link to="/login"><span className="resp">Login</span></Link></li>
+        )}
 </ul>
 
 
