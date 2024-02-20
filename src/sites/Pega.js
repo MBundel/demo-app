@@ -41,9 +41,9 @@ const Pega = ({ selectedFirmName }) => {
             clientId={firm.clientId}
             // deferLoad="true"  uID: A4556666  PW: UGVnYTEyMzQh
             userIdentifier="AL864428"
-            password="UGVnYTEyMyE="
+            password="UGVnYTEyMzQ1IQ=="
             assignmentHeader="false"
-            style={{ width: "100%" }}
+            style={{ width: "700px", height: "500px" }}
             theme='{
             "components": {
             "link": {

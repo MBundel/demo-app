@@ -11,9 +11,9 @@ function Home({ selectedFirmName }) {
   return (
    <>
      
-    <div style={{display:"flex", justifyContent: "center"}}>
+    <div style={{display:"flex", justifyContent: "center",  lineHeight: "2", textAlign: "center", padding: "20px"}}>
 
-      <h1>Willkommen bei der  {firm.name}</h1>
+      <h1>Willkommen bei der {firm.name}</h1>
 
     </div>
 

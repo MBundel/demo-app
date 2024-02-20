@@ -101,3 +101,36 @@ input[type="text"] {
 .password-toggle-icon i:hover {
   color: #000;
 }
+
+
+
+@media screen and (max-width: 768px) { 
+  .mainLoginContent {
+    &_uniqa {
+      line-height: 2;
+      width: 360px;
+    }
+  
+    &_allianz {
+     
+      margin: auto;
+      margin-top: 15px;
+      line-height: 2;
+      
+      flex-direction: column;
+      justify-content: center;
+      width: 360px;
+      // height: 554px;
+ 
+    }
+    &_zurich{
+      line-height: 1.5;
+      width: 360px;
+
+      & h1{
+        font-size: 50px;
+      }
+    }
+  }
+
+}
