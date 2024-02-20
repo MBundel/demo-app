@@ -7,11 +7,44 @@ const Pega = ({ selectedFirmName }) => {
   const seF = selectedFirmName;
   const firm = firms[seF];
 
-  const [isVisible, setIsVisible] = useState(true);
+  const [isPegaVisible, setIsPegaVisible] = useState(true);
+  const [isEndVisible, setIsEndVisible] = useState(false);
 
-  const handleView = () => {
-    setIsVisible(!isVisible);
+
+  const handlePegaView = () => {
+    setIsPegaVisible(!isPegaVisible);
   };
+  const handleEndView = () => {
+    setIsEndVisible(!isEndVisible);
+    setIsPegaVisible(!isPegaVisible);
+  };
+  
+  const consoleWarn = console.warn;
+
+  console.warn = function (message) {
+    if (message.indexOf('ResizeObserver') > -1) {
+      // Nichts tun, wenn es eine ResizeObserver Warnung ist
+    } else {
+      // Ansonsten Verhalten beibehalten
+      consoleWarn.apply(console, arguments);
+    }
+  };
+
+
+
+
+ useEffect(() => {
+  let elEmbedding = document.getElementById("theEmbed");
+  if(elEmbedding) {
+    elEmbedding.addEventListener("embedprocessingend", handleEndView);
+    return () => {
+      if(elEmbedding) {
+        elEmbedding.removeEventListener("embedprocessingend", handleEndView);
+      }
+    };
+  }
+}, [selectedFirmName, isPegaVisible]);
+
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -22,10 +55,15 @@ const Pega = ({ selectedFirmName }) => {
   }, []);
 
   return (
+    <>
+
+     {isEndVisible ? <div style={{display:"flex", margin: "auto", width: "100%", justifyContent:"center"}}>Ihr Antrag wurde erfolgreich abgeschickt</div> : ""}
     <div className={`pega_container_${firm.name}`}>
       <div className="pega_content">
-        {isVisible ? (
-          <button className={`buttonLogin_${firm.name}`} onClick={handleView}>
+
+       
+        {isPegaVisible ? (
+          <button className={`buttonLogin_${firm.name}`} onClick={handlePegaView}>
             Schadensfall starten
           </button>
         ) : (
@@ -84,6 +122,7 @@ const Pega = ({ selectedFirmName }) => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
