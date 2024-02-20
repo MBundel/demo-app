@@ -63,6 +63,7 @@
 
   & img{
     height: 20px;
+    padding:  20px 20px;
     width: auto;
     cursor: pointer;
   }
@@ -73,8 +74,9 @@
   .optionBox {
    
     width: auto;
-   
+    max-width: 200px;
     height: auto;
+    text-align: center;
    
     
     display: block;
