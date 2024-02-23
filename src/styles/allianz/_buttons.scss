@@ -1,0 +1,41 @@
+@import "../colorSchemes.scss";
+
+
+
+@mixin allianz_button_default{
+    color: $allianzWhite;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    min-width: 320px;    
+    width: fit-content;
+    height: 45px;
+    margin: 30px auto;
+    background-color: $allianzLightBlue;
+    justify-content: center;
+}
+
+
+@mixin allianz_button_strong {
+  @include allianz_button_default;
+    color: $allianzWhite;
+    background-color: $allianzLightBlue;  
+  
+    &:hover {
+      background-color: $allianzMiddleBlue;
+    }
+  }
+@mixin allianz_button_deactivated {
+  @include allianz_button_default;
+    color: $allianzWhite;
+    background-color: $allianzGrey;  
+  
+    &:hover {
+      background-color: $allianzMiddleBlue;
+    }
+  }

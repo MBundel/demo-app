@@ -1,4 +1,5 @@
 import { faArrowRight, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import *  as theme from "./pegatheme.js";
 
 export const allianz = {
     id: 1,
@@ -18,7 +19,8 @@ export const allianz = {
     newRegDesign: "designLink",
     loginDesignOrder: ["FormHeader", "LoginInput", "ForgotSomething", "LoginButton", "NewRegistration"],
     pegaAppAlias: "a-claim",
-    clientId:"13322926513876424761"
+    clientId:"13322926513876424761",
+    theme: theme.allianz
 }
 export const uniqa = {
     id: 2,
@@ -38,7 +40,8 @@ export const uniqa = {
     newRegDesign: "designButton",
     loginDesignOrder: ["FormHeader", "LoginInput", "LoginButton", "ForgotSomething", "NewRegistration"],
     pegaAppAlias: "u-claim",
-    clientId:"20004324912556845037"
+    clientId:"20004324912556845037",
+    theme: theme.uniqa
 }
 export const zurich = {
     id: 3,
@@ -58,6 +61,7 @@ export const zurich = {
     newRegDesign: 'designButton',
     loginDesignOrder: ["FormHeader", "LoginInput", "ForgotSomething", "LoginButton", "NewRegistration"],
     pegaAppAlias: "z-claim",
-    clientId:"67345646815270313102"
+    clientId:"67345646815270313102",
+    theme: theme.zurich
 }
 
