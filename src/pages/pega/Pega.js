@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "../styles/pega.scss";
-import "../styles/loginComponents/loginButton.scss";
-import { uniqa, allianz, zurich } from "../records/insuranceFirms";
-import PegaEmbed from "../components/pegaSite/PegaEmbed";
+import "../../styles/pega.scss";
+import "../../styles/loginComponents/loginButton.scss";
+import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+import PegaEmbed from "./components/PegaEmbed";
 
 const Pega = ({ selectedFirmName }) => {
   //-------------------------------------------- field definitions --------------------------------------------------------

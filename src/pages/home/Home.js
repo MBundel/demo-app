@@ -1,6 +1,6 @@
 import React from "react";
-import { uniqa, allianz, zurich } from "../records/insuranceFirms";
-import image from '../assets/background.PNG';
+import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+
 
 function Home({ selectedFirmName }) {
 
@@ -19,17 +19,7 @@ function Home({ selectedFirmName }) {
 
 
 
-     {/* <img 
-  src={image} 
-  className="placeholderIMG" 
-  alt="contentPlaceholder" 
-  style={{
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '43%'
-  }}
-/> */}
+
 
     </>
   );

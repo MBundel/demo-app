@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { uniqa, allianz, zurich } from "./records/insuranceFirms";
 
 // --- Import Sites
-import Home from './sites/Home';
-import Login from './sites/Login';
-import Pega from './sites/Pega';
+import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import Pega from './pages/pega/Pega';
 
 // --- Import helpers
 import Nav from './components/Nav';

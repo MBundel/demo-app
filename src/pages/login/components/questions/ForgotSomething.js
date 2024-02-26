@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../../../styles/loginComponents/forgotSomething.scss'
+import '../../../../styles/loginComponents/forgotSomething.scss'
 import { faArrowRight, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
