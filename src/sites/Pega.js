@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../styles/pega.scss";
 import "../styles/loginComponents/loginButton.scss";
 import { uniqa, allianz, zurich } from "../records/insuranceFirms";
+import PegaEmbed from "../components/pegaSite/PegaEmbed";
 
 const Pega = ({ selectedFirmName }) => {
   //-------------------------------------------- field definitions --------------------------------------------------------
   const [isPegaVisible, setIsPegaVisible] = useState(true);
   const [isEndVisible, setIsEndVisible] = useState(false);
-  const [pegaAction, setPegaAction] = useState(""); // "createCase" || "openCase"
+  const [pegaAction, setPegaAction] = useState(""); // "createCase" || "openCase" || "openPage"
   const [caseID, setCaseID] = useState("S-18079");
 
   const firms = { uniqa, allianz, zurich };
@@ -22,7 +23,7 @@ const Pega = ({ selectedFirmName }) => {
   };
   const pressContinueButton = () => {
     setIsPegaVisible(!isPegaVisible);
-    setPegaAction("openCase");
+    setPegaAction("openPage");
   };
 
   const handleEndView = () => {
@@ -39,6 +40,14 @@ const Pega = ({ selectedFirmName }) => {
       consoleWarn.apply(console, arguments);
     }
   };
+
+
+  console.log(`pegaAction: ${pegaAction}`);              
+console.log(`caseID: ${pegaAction === "createCase" ? "" : caseID}`);              
+console.log(`appAlias: ${firm.pegaAppAlias}`);              
+console.log(`clientId: ${firm.clientId}`);
+console.log(`theme: ${firm.theme}`);
+console.log(`----------------------------`);
 
   //-------------------------------------------- useEffect --------------------------------------------------------
 
@@ -97,40 +106,27 @@ const Pega = ({ selectedFirmName }) => {
               <button
                 className={`buttonLogin_${firm.name}`}
                 onClick={pressStartButton}
-                value=""
+                style={{width: "100%"}}
               >
                 Neuen Schadensfall starten
               </button>
               <button
                 className={`buttonLogin_${firm.name}`}
                 onClick={pressContinueButton}
-                value=""
               >
                 Bisherigen Schadensfalls weiterbearbeiten
               </button>
             </div>
           ) : (
-        
-            <pega-embed
-              id="theEmbed"
-              action={pegaAction}
-              caseTypeID="Org-CRMInsurance-Work-Schaden"
-              // caseID = {pegaAction === "createCase" ? "" : caseID}
-              assignmentID="ASSIGN-WORKLIST ORG-CRMINSURANCE-WORK S-18058!SCHADENMELDEN"
-              casePage="assignment"
-              appAlias={firm.pegaAppAlias}
-              pegaServerUrl="https://4wvlxocw.pegace.net/prweb/"
-              staticContentUrl="https://release.constellation.pega.io/8.23.1-266/react/prod/"
-              authService="pega"
-              // clientId={firm.clientId}
-              clientId="23479118762171457969"
-              deferLoad="false"
-              userIdentifier="AL864428"
-              password="UGVnYTEyMzQ1IQ=="
-              assignmentHeader="true"
-              style={{ width: "700px", height: "500px" }}
+              <PegaEmbed              
+              pegaAction={pegaAction}              
+              caseID = {pegaAction === "createCase" ? "" : caseID}              
+              pegaAppAlias={firm.pegaAppAlias}              
+              clientId={firm.clientId}
               theme={firm.theme}
-            ></pega-embed>
+              />
+        
+            
           )}
         </div>
       </div>
