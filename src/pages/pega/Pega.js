@@ -3,6 +3,7 @@ import "../../styles/pega.scss";
 import "../../styles/loginComponents/loginButton.scss";
 import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
 import PegaEmbed from "./components/PegaEmbed";
+import ButtonPega from "./components/ButtonPega";
 
 const Pega = ({ selectedFirmName }) => {
   //-------------------------------------------- field definitions --------------------------------------------------------
@@ -21,6 +22,7 @@ const Pega = ({ selectedFirmName }) => {
     setIsPegaVisible(!isPegaVisible);
     setPegaAction("createCase");
   };
+
   const pressContinueButton = () => {
     setIsPegaVisible(!isPegaVisible);
     setPegaAction("openPage");
@@ -98,19 +100,20 @@ const Pega = ({ selectedFirmName }) => {
                 alignItems: "center",
               }}
             >
-              <button
-                className={`buttonLogin_${firm.name}`}
+              <ButtonPega
+                customStlye={firm.name}
                 onClick={pressStartButton}
-                style={{width: "100%"}}
-              >
-                Neuen Schadensfall starten
-              </button>
-              <button
-                className={`buttonLogin_${firm.name}`}
+                buttonLabel = "Neuen Schadensfall starten"
+                
+              />
+              <ButtonPega
+                customStlye={firm.name}
                 onClick={pressContinueButton}
-              >
-                Bisherigen Schadensfalls weiterbearbeiten
-              </button>
+                buttonLabel = " Bisherigen Schadensfalls weiterbearbeiten"                
+              />
+                
+            
+           
             </div>
           ) : (
               <PegaEmbed              
