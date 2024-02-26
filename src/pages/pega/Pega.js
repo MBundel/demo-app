@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/pega.scss";
+import "./pega.scss";
 import "../../styles/loginComponents/loginButton.scss";
+import "./pega.scss";
 import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
 import PegaEmbed from "./components/PegaEmbed";
 import ButtonPega from "./components/ButtonPega";
+import InfoMessagePega from "./components/InfoMessagePega";
 
 const Pega = ({ selectedFirmName }) => {
+
   //-------------------------------------------- field definitions --------------------------------------------------------
-  const [isPegaVisible, setIsPegaVisible] = useState(true);
-  const [isEndVisible, setIsEndVisible] = useState(false);
+
   const [pegaAction, setPegaAction] = useState(""); // "createCase" || "openCase" || "openPage"
-  const [caseID, setCaseID] = useState("S-18079");
+  const [message, setMessage] = useState(
+    "Hallo Frau Wolke. Wie können wir behilflich sein?"
+  );
+  const [isVisible, setIsVisible] = useState({
+    startButton: true,
+    openButton: true,
+    closeButton: false,
+    infoMessage: true,
+    pegaEmbed: false,
+  });
 
   const firms = { uniqa, allianz, zurich };
   const seF = selectedFirmName;
@@ -19,30 +30,30 @@ const Pega = ({ selectedFirmName }) => {
   //-------------------------------------------- function definitions --------------------------------------------------------
 
   const pressStartButton = () => {
-    setIsPegaVisible(!isPegaVisible);
+    setIsVisible(prevState => ({
+      ...prevState,
+      openButton: !prevState.openButton,
+      startButton: !prevState.startButton,
+      pegaEmbed: !prevState.pegaEmbed
+  }));
+    setMessage("Kontaktieren Sie uns gerne bei Fragen.");
     setPegaAction("createCase");
   };
 
+ //----
   const pressContinueButton = () => {
-    setIsPegaVisible(!isPegaVisible);
+    setIsVisible(prevState => ({
+      ...prevState,
+      openButton: !prevState.openButton,
+      startButton: !prevState.startButton,
+      pegaEmbed: !prevState.pegaEmbed,
+      closeButton: !prevState.closeButton
+  }));
+
     setPegaAction("openPage");
   };
 
-  const handleEndView = () => {
-    setIsEndVisible(!isEndVisible);
-    setIsPegaVisible(!isPegaVisible);
-  };
-
-  const consoleWarn = console.warn;
-
-  console.warn = function (message) {
-    if (message.indexOf("ResizeObserver") > -1) {
-      // Pega Fehlermeldungen ausblenden
-    } else {
-      consoleWarn.apply(console, arguments);
-    }
-  };
-
+  //----
 
 
 
@@ -54,16 +65,16 @@ const Pega = ({ selectedFirmName }) => {
 
     if (elEmbedding) {
       events.forEach((event) =>
-        elEmbedding.addEventListener(event, handleEndView)
+        elEmbedding.addEventListener(event, setIsVisible)
       );
 
       return () => {
         events.forEach((event) =>
-          elEmbedding.removeEventListener(event, handleEndView)
+          elEmbedding.removeEventListener(event, setIsVisible)
         );
       };
     }
-  }, [isPegaVisible, handleEndView]);
+  }, [isVisible.pegaEmbed, setIsVisible]);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -76,56 +87,37 @@ const Pega = ({ selectedFirmName }) => {
   //--------------------------------------------JSX --------------------------------------------------------
   return (
     <>
-      {isEndVisible ? (
-        <div
-          style={{
-            display: "flex",
-            margin: "auto",
-            width: "100%",
-            justifyContent: "center",
-          }}
-        >
-          Ihr Antrag wurde erfolgreich abgeschickt
-        </div>
-      ) : (
-        ""
-      )}
+      <InfoMessagePega isVisible={isVisible.infoMessage} message={message} />
+
       <div className={`pega_container_${firm.name}`}>
         <div className="pega_content">
-          {isPegaVisible ? (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <ButtonPega
-                customStlye={firm.name}
-                onClick={pressStartButton}
-                buttonLabel = "Neuen Schadensfall starten"
-                
-              />
-              <ButtonPega
-                customStlye={firm.name}
-                onClick={pressContinueButton}
-                buttonLabel = " Bisherigen Schadensfalls weiterbearbeiten"                
-              />
-                
-            
-           
-            </div>
-          ) : (
-              <PegaEmbed              
-              pegaAction={pegaAction}              
-              caseID = {pegaAction === "createCase" ? "" : caseID}              
-              pegaAppAlias={firm.pegaAppAlias}              
-              clientId={firm.clientId}
-              theme={firm.theme}
-              />
-        
-            
-          )}
+          
+            <ButtonPega
+              customStlye={firm.name}
+              onClick={pressStartButton}
+              buttonLabel="Neuen Schadensfall starten"
+              isVisible={isVisible.startButton}
+            />
+            <ButtonPega
+              customStlye={firm.name}
+              onClick={pressContinueButton}
+              buttonLabel="Bisherigen Schadensfalls weiterbearbeiten"
+              isVisible={isVisible.openButton}
+            />
+          
+
+          <PegaEmbed
+            isVisible={isVisible.pegaEmbed}
+            firm={firm}
+            pegaAction={pegaAction}
+          />
+
+          <ButtonPega
+            customStlye={firm.name}
+            onClick={pressContinueButton}
+            buttonLabel="Schadensliste schließen"
+            isVisible={isVisible.closeButton}
+          />
         </div>
       </div>
     </>
