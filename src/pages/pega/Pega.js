@@ -8,7 +8,6 @@ import ButtonPega from "./components/ButtonPega";
 import InfoMessagePega from "./components/InfoMessagePega";
 
 const Pega = ({ selectedFirmName }) => {
-
   //-------------------------------------------- field definitions --------------------------------------------------------
 
   const [pegaAction, setPegaAction] = useState(""); // "createCase" || "openCase" || "openPage"
@@ -30,32 +29,30 @@ const Pega = ({ selectedFirmName }) => {
   //-------------------------------------------- function definitions --------------------------------------------------------
 
   const pressStartButton = () => {
-    setIsVisible(prevState => ({
-      ...prevState,
-      openButton: !prevState.openButton,
-      startButton: !prevState.startButton,
-      pegaEmbed: !prevState.pegaEmbed
-  }));
-    setMessage("Kontaktieren Sie uns gerne bei Fragen.");
-    setPegaAction("createCase");
-  };
-
- //----
-  const pressContinueButton = () => {
-    setIsVisible(prevState => ({
+    setIsVisible((prevState) => ({
       ...prevState,
       openButton: !prevState.openButton,
       startButton: !prevState.startButton,
       pegaEmbed: !prevState.pegaEmbed,
-      closeButton: !prevState.closeButton
-  }));
+    }));
+    setMessage("Kontaktieren Sie uns gerne bei Fragen.");
+    setPegaAction("createCase");
+  };
+
+  //----
+  const pressContinueButton = () => {
+    setIsVisible((prevState) => ({
+      ...prevState,
+      openButton: !prevState.openButton,
+      startButton: !prevState.startButton,
+      pegaEmbed: !prevState.pegaEmbed,
+      closeButton: !prevState.closeButton,
+    }));
 
     setPegaAction("openPage");
   };
 
   //----
-
-
 
   //-------------------------------------------- useEffect --------------------------------------------------------
 
@@ -87,24 +84,24 @@ const Pega = ({ selectedFirmName }) => {
   //--------------------------------------------JSX --------------------------------------------------------
   return (
     <>
-      <InfoMessagePega isVisible={isVisible.infoMessage} message={message} />
-
       <div className={`pega_container_${firm.name}`}>
         <div className="pega_content">
-          
-            <ButtonPega
-              customStlye={firm.name}
-              onClick={pressStartButton}
-              buttonLabel="Neuen Schadensfall starten"
-              isVisible={isVisible.startButton}
-            />
-            <ButtonPega
-              customStlye={firm.name}
-              onClick={pressContinueButton}
-              buttonLabel="Bisherigen Schadensfalls weiterbearbeiten"
-              isVisible={isVisible.openButton}
-            />
-          
+          <InfoMessagePega
+            isVisible={isVisible.infoMessage}
+            message={message}
+          />
+          <ButtonPega
+            customStlye={firm.name}
+            onClick={pressStartButton}
+            buttonLabel="Neuen Schadensfall starten"
+            isVisible={isVisible.startButton}
+          />
+          <ButtonPega
+            customStlye={firm.name}
+            onClick={pressContinueButton}
+            buttonLabel="Bisherigen Schadensfalls weiterbearbeiten"
+            isVisible={isVisible.openButton}
+          />
 
           <PegaEmbed
             isVisible={isVisible.pegaEmbed}
