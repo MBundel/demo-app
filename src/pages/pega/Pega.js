@@ -42,12 +42,7 @@ const Pega = ({ selectedFirmName }) => {
   };
 
 
-  console.log(`pegaAction: ${pegaAction}`);              
-console.log(`caseID: ${pegaAction === "createCase" ? "" : caseID}`);              
-console.log(`appAlias: ${firm.pegaAppAlias}`);              
-console.log(`clientId: ${firm.clientId}`);
-console.log(`theme: ${firm.theme}`);
-console.log(`----------------------------`);
+
 
   //-------------------------------------------- useEffect --------------------------------------------------------
 
