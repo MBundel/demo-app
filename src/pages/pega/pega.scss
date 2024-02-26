@@ -1,53 +1,43 @@
+@import "../../styles/colorSchemes.scss";
 
-@import '../../styles/colorSchemes.scss';
-
-
-
-
-
-
-.pega{
-    &_content{
-        display: flex;
-        justify-content: center;
-        max-width: 1400px;
-        margin: auto;
-        padding: 50px 50px 50px 50px;
-        flex-direction: column;
-        align-items: center;
-        
+.pega {
+  &_content {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+    padding: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+  &_container {
+    @mixin default {
+      max-width: 1480px;
+      margin: auto;
     }
-    &_container{
 
-
-        &_uniqa{
-            background-color: $uniqaWhite;
-            max-width: 1480px;
-            margin: auto;
-        }
-        &_allianz{
-            background-color: $allianzWhite;
-            max-width: 1480px;
-            margin: auto;
-        }
-        &_zurich{
-            background-color: $zurichBeige;
-            max-width: 1480px;
-            margin: auto;
-        }
+    &_uniqa {
+      @include default;
+      background-color: $uniqaWhite;
     }
+    &_allianz {
+      @include default;
+      background-color: $allianzWhite;
+    }
+    &_zurich {
+      @include default;
+      background-color: $zurichBeige;
+    }
+  }
 }
 
-@media only screen and (max-width: 768px){
-    body{
-        line-height: 0;
-        
+@media only screen and (max-width: 768px) {
+  body {
+    line-height: 0;
+  }
+  .pega {
+    &_content {
+      padding: 20px;
     }
-    .pega{
-        &_content{
-           
-            padding: 20px;
-        }
-    }    
+  }
 }
-
