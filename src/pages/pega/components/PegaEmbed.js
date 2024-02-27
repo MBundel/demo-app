@@ -1,22 +1,36 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-const PegaEmbed = ({
-  pegaAction,
-  firm,
-  pegaAppAlias,
-  clientId,
-  theme,
-  isVisible,
-}) => {
+const PegaEmbed = ({ pegaAction, firm, isVisible }) => {
 
-  console.log(
-    'pegaAction: ', pegaAction,
-    
-    'pegaAppAlias: ', firm.pegaAppAlias,
-    'clientId: ', firm.clientId,
-    'theme: ', firm.theme,
-    'isVisible: ', isVisible
-);
+
+
+
+  // this BS L9-L32, because pega is unable to get maxWidth: "100%";
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const responsiveness = {
+    width: windowSize.width < 700 ? '100%' :  '700px', 
+    height: windowSize.height < 700 ? '100%' :  '1300px'
+  };
+
   return (
     <div>
       {isVisible ? (
@@ -41,7 +55,7 @@ const PegaEmbed = ({
           userIdentifier="ZU864428"
           password="UGVnYTEyMzQ1IQ=="
           assignmentHeader="false"
-          style={{ width: "700px",maxWidth: "100%" , height: "1300px" }}
+          style={{ width: responsiveness.width, height: responsiveness.height }}
           theme={firm.theme}
         ></pega-embed>
       ) : (
