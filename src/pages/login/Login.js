@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/styleLogin.scss";
+import "./login.scss";
 import "../../styles/styles.scss";
 import FormHeader from "./components/FormHeader";
 // import { Link } from 'react-router-dom';
