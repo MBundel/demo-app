@@ -36,10 +36,12 @@ const PegaEmbed = ({
           clientId={firm.clientId}
           // clientId="23479118762171457969"
           deferLoad="false"
-          userIdentifier="AL864428"
+          // userIdentifier="AL864428"
+          // password="UGVnYTEyMzQ1IQ=="
+          userIdentifier="ZU864428"
           password="UGVnYTEyMzQ1IQ=="
           assignmentHeader="false"
-          style={{ width: "700px", height: "1300px" }}
+          style={{ width: "700px",maxWidth: "100%" , height: "1300px" }}
           theme={firm.theme}
         ></pega-embed>
       ) : (
