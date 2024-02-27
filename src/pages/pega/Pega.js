@@ -28,7 +28,7 @@ const Pega = ({ selectedFirmName }) => {
 
   //-------------------------------------------- function definitions --------------------------------------------------------
 
-  const pressStartButton = () => {
+  const changeDefaultVisibility = () => {
     setIsVisible((prevState) => ({
       ...prevState,
       openButton: !prevState.openButton,
@@ -36,21 +36,27 @@ const Pega = ({ selectedFirmName }) => {
       pegaEmbed: !prevState.pegaEmbed,
     }));
     setMessage("Kontaktieren Sie uns gerne bei Fragen.");
+  };
+
+  const pressStartButton = () => {
+    changeDefaultVisibility();
+    
     setPegaAction("createCase");
   };
 
-  //----
   const pressContinueButton = () => {
+    changeDefaultVisibility();
     setIsVisible((prevState) => ({
       ...prevState,
-      openButton: !prevState.openButton,
-      startButton: !prevState.startButton,
-      pegaEmbed: !prevState.pegaEmbed,
       closeButton: !prevState.closeButton,
     }));
-
     setPegaAction("openPage");
   };
+
+  const pressStopButton = () =>{
+    pressContinueButton();
+   
+  }
 
   //----
 
@@ -58,16 +64,32 @@ const Pega = ({ selectedFirmName }) => {
 
   useEffect(() => {
     const elEmbedding = document.getElementById("theEmbed");
-    const events = ["embedprocessingend", "embedeventcancel"];
+
+    const handleEmbedProcessingEnd = () => {
+      changeDefaultVisibility();
+      setMessage("Schadensmeldung wurde erfolgreich abgeschickt.");
+    };
+
+    const handleEmbedEventCancel = () => {
+      changeDefaultVisibility();
+      setMessage("Der Vorgang wurde gespeichert.");
+    };
 
     if (elEmbedding) {
-      events.forEach((event) =>
-        elEmbedding.addEventListener(event, setIsVisible)
+      elEmbedding.addEventListener(
+        "embedprocessingend",
+        handleEmbedProcessingEnd
       );
+      elEmbedding.addEventListener("embedeventcancel", handleEmbedEventCancel);
 
       return () => {
-        events.forEach((event) =>
-          elEmbedding.removeEventListener(event, setIsVisible)
+        elEmbedding.removeEventListener(
+          "embedprocessingend",
+          handleEmbedProcessingEnd
+        );
+        elEmbedding.removeEventListener(
+          "embedeventcancel",
+          handleEmbedEventCancel
         );
       };
     }
@@ -86,6 +108,7 @@ const Pega = ({ selectedFirmName }) => {
     <>
       <div className={`pega_container_${firm.name}`}>
         <div className="pega_content">
+          
           <InfoMessagePega
             isVisible={isVisible.infoMessage}
             message={message}
@@ -111,7 +134,7 @@ const Pega = ({ selectedFirmName }) => {
 
           <ButtonPega
             customStlye={firm.name}
-            onClick={pressContinueButton}
+            onClick={pressStopButton}
             buttonLabel="Schadensliste schließen"
             isVisible={isVisible.closeButton}
           />

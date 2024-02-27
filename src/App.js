@@ -9,7 +9,8 @@ import Pega from './pages/pega/Pega';
 
 // --- Import helpers
 import Nav from './components/Nav';
-import Option from './helper/Option';
+import Option from './components/Option';
+import ErrorBoundary from './components/ErrorBoundary';
 
 //importStyles
 import './styles/app.scss'
@@ -30,15 +31,17 @@ function App() {
   
   return (
     <div className={`app_${firm.name}`}>
-      <Router>
-        <Nav selectedFirmName={selectedFirmName}/>
-        <Routes>
-          <Route path="/"       element={<Home    selectedFirmName={selectedFirmName} />} />
-          <Route path="/login"  element={<Login   selectedFirmName={selectedFirmName} />} />
-          <Route path="/pega"   element={<Pega    selectedFirmName={selectedFirmName} />} /> 
-        </Routes>
-      </Router>
-      <Option handleSelectFirmName={setSelectedFirmName}/> 
+      <ErrorBoundary>
+        <Router>
+          <Nav selectedFirmName={selectedFirmName}/>
+          <Routes>
+            <Route path="/"       element={<Home    selectedFirmName={selectedFirmName} />} />
+            <Route path="/login"  element={<Login   selectedFirmName={selectedFirmName} />} />
+            <Route path="/pega"   element={<Pega    selectedFirmName={selectedFirmName} />} /> 
+          </Routes>
+        </Router>
+        <Option handleSelectFirmName={setSelectedFirmName}/> 
+      </ErrorBoundary>
     </div>
   );
 }

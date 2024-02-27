@@ -11,9 +11,11 @@ function Home({ selectedFirmName }) {
   return (
    <>
      
-    <div style={{display:"flex", justifyContent: "center",  lineHeight: "2", textAlign: "center", padding: "20px"}}>
+    <div style={{display:"flex", justifyContent: "center",  flexDirection:"column", lineHeight: "2", textAlign: "center", padding: "20px"}}>
 
       <h1>Willkommen bei der {firm.name}</h1>
+
+      <img src="https://www.fondsprofessionell.de/content/fpim/uploads/news/0/b/d/1600948109_versicherung.jpg" style={{width: "100%",  height:"auto"}} alt="Hände mit Versicherungen"/>
 
     </div>
 
