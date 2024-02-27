@@ -1,16 +1,13 @@
 @import "../colorSchemes.scss";
 
 .contentFS {
-  &_allianz {
+  &_allianz, &_zurich {
     margin-top: 40px;
-    display: block;
-    justify-content: left;
-    & div {
-      margin-top: -10px;
-    }
+    padding: 10px;
+    
+   
   }
-  &_uniqa {
-  }
+  
 }
 
 .aFS {
