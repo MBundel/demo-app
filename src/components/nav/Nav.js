@@ -20,7 +20,7 @@ function Navbar({ selectedFirmName }) {
 
   return (
     <>
-      <div className="homepage-container">
+      <div className="nav-container">
         <header role="banner" className="header-box">
           <a href="http://localhost:3000">
             <img src={`${selectedFirm.imageSrc}`} alt="Logo" className="logo" />

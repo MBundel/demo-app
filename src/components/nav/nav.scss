@@ -21,10 +21,9 @@
     color: black;
   
   }
-   .homepage-container{
+   .nav-container{
       padding: 0 3.2rem;
       background-color: white;
-      max-width: 1376px;
       margin: auto;
   } 
   
@@ -39,8 +38,9 @@
   
   .header-box{
     height: 6rem;
-    margin: 1.6rem;
+    margin: 1.6rem auto 0;
     padding-top: 1.6rem;
+    max-width: 1400px;
   
   }
   
