@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "../styles/senacor/senacor.scss";
-import * as insuranceFirms from "../records/insuranceFirms";
+import "./option.scss";
+
+import * as insuranceFirms from "../../records/insuranceFirms";
 
 // Import Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

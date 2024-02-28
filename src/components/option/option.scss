@@ -1,0 +1,28 @@
+
+@use "../../styles/senacor/icon";
+
+
+
+
+
+.gearBox {
+
+  &_closed {
+    @include icon.gearBox;
+    &:hover {     
+      rotate: 45deg;
+    }
+    
+  }
+  &_open {
+    @include icon.gearBox;
+    rotate: 45deg;  
+   
+  }
+}
+
+.optionBox {
+  @include icon.optionBox;
+}
+
+

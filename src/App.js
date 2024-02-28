@@ -8,9 +8,9 @@ import Login from './pages/login/Login';
 import Pega from './pages/pega/Pega';
 
 // --- Import helpers
-import Nav from './components/Nav';
-import Option from './components/Option';
-import ErrorBoundary from './components/ErrorBoundary';
+import Nav from './components/nav/Nav';
+import Option from './components/option/Option';
+import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 
 //importStyles
 import './styles/app.scss'

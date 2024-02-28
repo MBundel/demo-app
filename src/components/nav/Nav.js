@@ -1,6 +1,6 @@
 import   { React, useState, useEffect }from "react";
-import { uniqa, allianz, zurich } from "../records/insuranceFirms";
-import '../styles/styles.scss'
+import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+import '../../styles/styles.scss'
  
   import { Link, useLocation  } from 'react-router-dom';
 
