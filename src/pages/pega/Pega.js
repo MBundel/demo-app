@@ -122,7 +122,7 @@ const Pega = ({ selectedFirmName }) => {
           <ButtonPega
             customStlye={firm.name}
             onClick={pressContinueButton}
-            buttonLabel="Bisherigen Schadensfalls weiterbearbeiten"
+            buttonLabel="Bisherigen Schadensfall weiterbearbeiten"
             isVisible={isVisible.openButton}
           />
 
