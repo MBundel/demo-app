@@ -19,7 +19,7 @@ import './styles/app.scss'
 
 function App() {
 
-  const [selectedFirmName, setSelectedFirmName] = useState("allianz");
+  const [selectedFirmName, setSelectedFirmName] = useState("zurich");
 
   const firms = { uniqa, allianz, zurich };
   

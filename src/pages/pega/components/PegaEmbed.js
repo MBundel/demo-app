@@ -15,7 +15,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible }) => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight,
+        // height: window.innerHeight,
       });
     }
 
@@ -28,7 +28,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible }) => {
 
   const responsiveness = {
     width: windowSize.width < 700 ? '100%' :  '700px', 
-    height: windowSize.height < 700 ? '100%' :  '1300px'
+    // height: windowSize.height < 700 ? '100%' :  '500px'
   };
 
   return (
@@ -55,7 +55,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible }) => {
           userIdentifier="ZU864428"
           password="UGVnYTEyMzQ1IQ=="
           assignmentHeader="false"
-          style={{ width: responsiveness.width, height: responsiveness.height }}
+          style={{ width: responsiveness.width}}
           theme={firm.theme}
         ></pega-embed>
       ) : (
