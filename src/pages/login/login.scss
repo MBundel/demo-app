@@ -1,6 +1,8 @@
+@use "../../styles/zurich/inputs" as zurich;
 @import "../../styles/colorSchemes.scss";
 
-@mixin mainLoginContentSharedProperties {
+
+@mixin mainLoginDefault {
   margin: auto;
   margin-top: 15px;
   padding: 16px;
@@ -13,16 +15,23 @@
 
 .mainLoginContent {
   &_uniqa {
-    @include mainLoginContentSharedProperties;
+    @include mainLoginDefault;
+    
     color: #1b1b1b;
     font-family: "Segoe UI", "Roboto", Helvetica, Arial, serif;
     background-color: $uniqaWhite;
     justify-content: space-between;
     box-shadow: 1px 1px 5px -4.5px #333333;
+
+
+  }
+  &_zurich{
+    @include mainLoginDefault;
+    @include zurich.input_default;
   }
 
-  &_allianz, &_zurich {
-    @include mainLoginContentSharedProperties;
+  &_allianz {
+    @include mainLoginDefault;
     font-family: "Calibri", sans-serif;
     justify-content: center;
   }
@@ -33,13 +42,13 @@
   }
 }
 
-input[type="password"], input[type="text"] {
-  width: 100%;
-  height: 40px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  margin-top: 5px;
-}
+// input[type="password"], input[type="text"] {
+//   width: 100%;
+//   height: 40px;
+//   border: 1px solid lightgrey;
+//   border-radius: 5px;
+//   margin-top: 5px;
+// }
 
 .header {
   background-color: white;

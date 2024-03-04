@@ -46,9 +46,9 @@ export const uniqa = {
 export const zurich = {
     id: 3,
     name: 'zurich',
-    loginLabelUser: 'Benutzername',
+    loginLabelUser: '',
     loginPlaceholderUser: 'Benutzername',
-    loginLabelPassword: 'Passwort',
+    loginLabelPassword: '',
     loginPlaceholderPassword: 'Passwort',
     loginButtonStart: 'Jetzt anmelden',
     loginForgotName: 'Benutzername vergessen',

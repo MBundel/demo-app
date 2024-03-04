@@ -1,7 +1,7 @@
 import React from "react";
+import FormHeader from "./components/FormHeader";
 import "./login.scss";
 import "../../styles/styles.scss";
-import FormHeader from "./components/FormHeader";
 // import { Link } from 'react-router-dom';
 
 import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
