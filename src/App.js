@@ -6,6 +6,7 @@ import { uniqa, allianz, zurich } from "./records/insuranceFirms";
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Pega from './pages/pega/Pega';
+import Dashboard from './pages/dashboard/Dashboard';
 
 // --- Import helpers
 import Nav from './components/nav/Nav';
@@ -35,9 +36,10 @@ function App() {
         <Router>
           <Nav selectedFirmName={selectedFirmName}/>
           <Routes>
-            <Route path="/"       element={<Home    selectedFirmName={selectedFirmName} />} />
-            <Route path="/login"  element={<Login   selectedFirmName={selectedFirmName} />} />
-            <Route path="/pega"   element={<Pega    selectedFirmName={selectedFirmName} />} /> 
+            <Route path="/"            element={<Home         selectedFirmName={selectedFirmName} />} />
+            <Route path="/login"       element={<Login        selectedFirmName={selectedFirmName} />} />
+            <Route path="/pega"        element={<Pega         selectedFirmName={selectedFirmName} />} /> 
+            <Route path="/dashboard"   element={<Dashboard    selectedFirmName={selectedFirmName} />} /> 
           </Routes>
         </Router>
         <Option handleSelectFirmName={setSelectedFirmName}/> 

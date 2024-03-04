@@ -58,6 +58,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible }) => {
           style={{ width: responsiveness.width}}
           theme={firm.theme}
         ></pega-embed>
+        
       ) : (
         ""
       )}

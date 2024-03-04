@@ -50,7 +50,7 @@ const Pega = ({ selectedFirmName }) => {
       ...prevState,
       closeButton: !prevState.closeButton,
     }));
-    setPegaAction("openPage");
+    setPegaAction("getNextWork");
   };
 
   const pressStopButton = () =>{
