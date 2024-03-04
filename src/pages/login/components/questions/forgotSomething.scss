@@ -1,15 +1,23 @@
+@use "../../../../styles/zurich/style";
 @import "../../../../styles/colorSchemes.scss";
 
 
-
+.spacing{
+  width:  20px;
+  margin-left:20px ;
+}
 
 .contentFS {
-  &_allianz, &_zurich {
+  &_allianz {
     margin-top: 40px;
     padding: 10px;
     
    
   }
+   &_zurich{
+    line-height: 42px;
+    margin: 20px 0;
+   }
   
 }
 

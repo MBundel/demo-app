@@ -1,11 +1,31 @@
 @import "../colorSchemes.scss";
 
+
+
+
+
+@mixin a{
+
+ & a:visited {
+      color: $zurichBlue;
+    }
+}
+
+
+
+
+
+//find in app.scss, which is general 
 @mixin style_default{
+    @include a;
     color: $zurichBlue;
     background-color: $zurichBeige;
     padding-bottom: 350px;
-    & a:visited {
-      color: $zurichBlue;
-    }
+    font-size:  20px ;
+   
     font-family: "Calibri", sans-serif;
+
+    
 }
+
+

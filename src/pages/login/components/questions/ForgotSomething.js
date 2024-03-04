@@ -9,7 +9,8 @@ const ForgotSomething = (props) => {
     const firm = props.selectedFirm;
     console.log(firm.name)
     const icon = firm.icon1 !== '' ? <FontAwesomeIcon icon={firm.icon1} /> : null;
-    
+    const spacing = icon ? <span className="spacing">   </span> :"";
+ 
 
    /**
  * Comments:
@@ -18,9 +19,9 @@ const ForgotSomething = (props) => {
   return (
     <div className={`contentFS_${firm.name}`}>
 
-        {firm.loginForgotName     !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon} {firm.loginForgotName}    </a></div> : '' }
-        {firm.loginForgotPassword !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon} {firm.loginForgotPassword}</a></div> : '' }
-        {firm.loginHelp           !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon} {firm.loginHelp}          </a></div> : '' }
+        {firm.loginForgotName     !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon}{spacing}{firm.loginForgotName}    </a></div> : '' }
+        {firm.loginForgotPassword !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon}{spacing}{firm.loginForgotPassword}</a></div> : '' }
+        {firm.loginHelp           !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon}{spacing}{firm.loginHelp}          </a></div> : '' }
        
         
   
