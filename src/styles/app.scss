@@ -1,6 +1,8 @@
+@use "./zurich/general" as zurich;
 @import "./colorSchemes.scss";
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 
@@ -16,11 +18,6 @@ html, body {
     padding-bottom: 350px;
   }
   &_zurich {
-    color: $zurichBlue;
-    background-color: $zurichBeige;
-    padding-bottom: 350px;
-    & a:visited {
-      color: $zurichBlue;
-    }
+    @include zurich.style_default;
   }
 }

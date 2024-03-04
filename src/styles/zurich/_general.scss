@@ -1,0 +1,11 @@
+@import "../colorSchemes.scss";
+
+@mixin style_default{
+    color: $zurichBlue;
+    background-color: $zurichBeige;
+    padding-bottom: 350px;
+    & a:visited {
+      color: $zurichBlue;
+    }
+    font-family: "Calibri", sans-serif;
+}
