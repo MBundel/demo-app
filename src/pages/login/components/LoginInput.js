@@ -1,4 +1,5 @@
 import React from 'react'
+import "./loginInput.scss";
 
 const LoginInput = (props) => {
 
@@ -8,7 +9,7 @@ const LoginInput = (props) => {
         // Ihre Funktion zum Anzeigen des Passworts
       }
   return (
-    <div>
+    <div className={`input_${selectedFirm.name}`} >
         
         <label htmlFor="txtUserID">{selectedFirm.loginLabelUser}</label>
           <input placeholder={selectedFirm.loginPlaceholderUser} type="text" id="txtUserID" name="UserIdentifier"  required />
