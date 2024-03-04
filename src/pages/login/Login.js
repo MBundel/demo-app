@@ -1,14 +1,14 @@
 import React from "react";
-import FormHeader from "./components/FormHeader";
-import "./login.scss";
-import "../../styles/styles.scss";
-// import { Link } from 'react-router-dom';
 
-import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+import FormHeader from "./components/FormHeader";
 import ForgotSomething from "./components/questions/ForgotSomething";
 import NewRegistration from "./components/questions/NewRegistration";
 import LoginInput from "./components/LoginInput";
 import LoginButton from "./components/LoginButton";
+
+import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+
+import "./login.scss";
 
 const Login = ({selectedFirmName}) => {
 

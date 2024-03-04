@@ -1,6 +1,6 @@
 import React from 'react'
 import './newRegistration.scss'
-import '../loginButton.scss'
+
 const NewRegistration = (props) => {
 
     const firm = props.selectedFirm;

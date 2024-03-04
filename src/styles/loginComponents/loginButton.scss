@@ -18,9 +18,7 @@
     &_uniqa{
        @include uniqa_button_strong;
     }
-    &_zurich{
-        @include zurich_button_strong
-    }
+ 
 }
 
 .buttonNewReg {
@@ -30,7 +28,5 @@
     &_uniqa{
        @include uniqa_button_regular;
     }
-    &_zurich{
-        @include zurich_button_regular
-    }
+  
 }

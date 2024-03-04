@@ -1,0 +1,37 @@
+@use '../../../styles/zurich/style.scss' as zurich;
+
+@import "../../../styles/colorSchemes.scss";
+
+
+
+.contentLB{
+    &_allianz{
+    display: flex
+    }
+}
+
+
+
+.buttonLogin{
+    &_allianz{
+        // @include allianz_button_strong;
+    }
+    &_uniqa{
+    //    @include uniqa_button_strong;
+    }
+    &_zurich{
+        @include zurich.button_strong;
+    }
+}
+
+.buttonNewReg {
+    // &_allianz{
+    //     @include allianz_button_strong;
+    // }
+    // &_uniqa{
+    //    @include uniqa_button_regular;
+    // }
+    // &_zurich{
+    //     @include zurich_button_regular
+    // }
+}

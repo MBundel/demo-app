@@ -1,0 +1,36 @@
+@import "../colorSchemes.scss";
+
+
+@mixin button_default{
+    
+    text-align: center;
+    color: $zurichWhite;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: inherit;
+    letter-spacing: -.3px;
+    border: none;
+    border-radius: 30px;
+    width: auto;
+    height: 56px;
+    padding:   0  25px ;
+    margin:  20px 0;
+    justify-content: center;
+}
+@mixin button_strong{
+    @include button_default;
+    background-color: $zurichBlue;
+
+    &:hover {
+        background-color: $zurichLightBlue;
+    }
+
+}
+@mixin button_regular{
+    @include button_default;
+    background-color: $zurichLightBlue;
+    &:hover {
+      background-color: $zurichBlue;
+    }
+
+}

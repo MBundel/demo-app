@@ -1,3 +1,4 @@
+@use "../../../../styles/zurich/style" as zurich;
 @import "../../../../styles/colorSchemes.scss";
 
 .contentNR{
@@ -22,5 +23,11 @@
                 color: $allianzLightBlue;
             }
         }
+    }
+}
+
+.buttonNewReg{
+    &_zurich{
+        @include zurich.button-regular;
     }
 }

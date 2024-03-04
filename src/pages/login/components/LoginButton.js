@@ -1,5 +1,5 @@
 import React from "react";
-import './loginButton.scss';
+import './loginButtons.scss';
 import { Link } from 'react-router-dom';
 
 const LoginButton = (props) => {
@@ -9,7 +9,7 @@ const LoginButton = (props) => {
     <div className={`contentLB_${firm.name}`}>
    
       {/* type:"submit" */}
-      <Link style={{width:"0"}} to="/pega" ><input className={`buttonLogin_${firm.name}`}  value={firm.loginButtonStart} /></Link>
+      <Link style={{width:"0"}} to="/pega" ><button className={`buttonLogin_${firm.name}`}>{firm.loginButtonStart} </button></Link>
     </div>
   );
 };
