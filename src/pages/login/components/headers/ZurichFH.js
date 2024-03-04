@@ -1,5 +1,6 @@
 import React from 'react'
-import '../../../../styles/zurich/login.scss'
+
+import './zurich.scss'
 
 const ZurichFH = () => {
   return (

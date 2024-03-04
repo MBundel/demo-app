@@ -1,13 +1,15 @@
-@import "../colorSchemes.scss";
+@import "../../../../styles/colorSchemes.scss";
 
 .zurich {
   &_h1 {
     font-weight: 300;
     font-size: 70px;
+    margin-bottom: 0;
   }
   &_p {
     font-size: 22px;
     font-weight: 300;
-    margin-top: -30px;
+    margin: 0 0 10px 0;
+   
   }
 }
