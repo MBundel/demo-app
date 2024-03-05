@@ -1,0 +1,46 @@
+@import "../colorSchemes.scss";
+
+@mixin button_default {
+  height: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Verdana";
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@mixin button_strong {
+  @include button_default;
+  background-color: $uniqaBlue;
+  color: $uniqaWhite;
+  &:hover {
+    background-color: $uniqaLightBlue;
+  }
+}
+
+@mixin uniqa_button_regular {
+  width: 200px;
+
+  padding: 16px;
+  color: #005ca9;
+  background-color: white;
+
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #005ca9;
+  color: #005ca9;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Verdana";
+}
+.button-regular:hover {
+  color: #008cff;
+}
