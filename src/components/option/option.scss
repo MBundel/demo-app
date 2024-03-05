@@ -1,5 +1,5 @@
 
-@use "../../styles/senacor/icon";
+@use "../../styles/senacor/sytle" as senacor;
 
 
 
@@ -8,21 +8,21 @@
 .gearBox {
 
   &_closed {
-    @include icon.gearBox;
+    @include senacor.gearBox;
     &:hover {     
       rotate: 45deg;
     }
     
   }
   &_open {
-    @include icon.gearBox;
+    @include senacor.gearBox;
     rotate: 45deg;  
    
   }
 }
 
 .optionBox {
-  @include icon.optionBox;
+  @include senacor.optionBox;
 }
 
 
