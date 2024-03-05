@@ -1,5 +1,5 @@
 import React from "react";
-import './loginButtons.scss';
+import './loginButton.scss';
 import { Link } from 'react-router-dom';
 
 const LoginButton = (props) => {

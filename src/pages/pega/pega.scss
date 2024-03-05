@@ -1,4 +1,9 @@
+@use "../../styles/zurich/style.scss" as zurich;
+@use "../../styles/uniqa/style.scss" as uniqa;
+@use "../../styles/allianz/style.scss" as allianz;
+
 @import "../../styles/colorSchemes.scss";
+
 
 .pega {
   &_content {
@@ -30,6 +35,8 @@
     }
   }
 }
+
+
 
 
 @media only screen and (max-width: 768px) {
