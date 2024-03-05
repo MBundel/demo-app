@@ -1,5 +1,6 @@
 @use "../../../styles/zurich/style.scss" as zurich;
 @use "../../../styles/uniqa/style.scss" as uniqa;
+@use "../../../styles/allianz/style.scss" as allianz;
 
 @import "../../../styles/colorSchemes.scss";
 
@@ -11,7 +12,7 @@
 
 .buttonLogin {
   &_allianz {
-    // @include allianz_button_strong;
+    @include allianz.button_strong;
   }
   &_uniqa {
     @include uniqa.button_strong;
@@ -22,13 +23,13 @@
 }
 
 .buttonNewReg {
-  // &_allianz{
-  //     @include allianz_button_strong;
-  // }
+  &_allianz{
+      @include allianz.button_strong;
+  }
   &_uniqa {
-    //    @include uniqa.button_regular;
+       @include uniqa.button_regular;
   }
   &_zurich {
-    // @include zurich.button_regular
+    @include zurich.button_regular;
   }
 }

@@ -1,6 +1,6 @@
 @import "../colorSchemes.scss";
 
-@mixin allianz_button_default {
+@mixin button_default {
   color: $allianzWhite;
   font-size: 16px;
   font-weight: 600;
@@ -10,8 +10,8 @@
   border: none;
   border-radius: 5px;
   padding: 10px 30px;
-  // min-width: 320px;    
-  // width: fit-content;
+  // min-width: 320px;   
+  // width: fit-content; 
   height: 45px;
   margin: 30px auto;
   justify-content: center;
@@ -26,16 +26,19 @@
   }
 }
 
-@mixin allianz_button_default {
-  @include allianz_button_default;
+@mixin button_regular {
+  @include button_default;
   background-color: $allianzLightBlue;
 }
 
-@mixin allianz_button_strong {
-  @include allianz_button_default;
+@mixin button_strong {
+  @include button_default;
+  background-color: $allianzDarkBlue;
+  width: auto;
+ 
 }
 
-@mixin allianz_button_deactivated {
-  @include allianz_button_default;
+@mixin button_deactivated {
+  @include button_default;
   background-color: $allianzGrey;  
 }

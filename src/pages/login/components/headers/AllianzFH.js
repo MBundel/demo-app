@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../../../styles/allianz/general.scss'
+import '../../../../styles/allianz/_style.scss'
 
 const AllianzFH = () => {
   return (
