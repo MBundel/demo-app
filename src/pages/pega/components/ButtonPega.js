@@ -1,18 +1,16 @@
 import React from "react";
+import Button from "../../../components/controls/Button";
 
 const ButtonPega = ({ buttonLabel, customStlye, onClick, isVisible }) => {
   return (
     <>
       {isVisible ? (
-
-        <button
-          className={`buttonLogin_${customStlye}`}
+        <Button
+        customStlye = {customStlye}
           onClick={onClick}
-          style={{ width: "100%" , maxWidth: "500px"}}
-        >
-          {buttonLabel}
-        </button>
-
+          style={{ width: "100%", maxWidth: "500px" }}
+          buttonLabel={buttonLabel}
+        />
       ) : (
         ""
       )}
