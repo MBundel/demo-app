@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-const PegaEmbed = ({ pegaAction, firm, isVisible }) => {
+const PegaEmbed = ({ pegaAction, firm, isVisible, isDevVersion }) => {
 
 
 
@@ -54,7 +54,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible }) => {
           // password="UGVnYTEyMzQ1IQ=="
           userIdentifier="ZU864428"
           password="UGVnYTEyMzQ1IQ=="
-          assignmentHeader="false"
+          assignmentHeader={isDevVersion}
           style={{ width: responsiveness.width}}
           theme={firm.theme}
         ></pega-embed>
