@@ -6,6 +6,7 @@ import ButtonPega from "./components/ButtonPega";
 import InfoMessagePega from "./components/InfoMessagePega";
 
 import "./pega.scss";
+import Switch from "../../components/controls/Switch";
 
 
 const Pega = ({ selectedFirmName }) => {
@@ -15,6 +16,7 @@ const Pega = ({ selectedFirmName }) => {
   const [message, setMessage] = useState(
     "Hallo Frau Wolke. Wie können wir behilflich sein?"
   );
+  const [isDevVersion, setIsDevVersion] = useState(false);
   const [isVisible, setIsVisible] = useState({
     startButton: true,
     openButton: true,
@@ -58,6 +60,12 @@ const Pega = ({ selectedFirmName }) => {
     pressContinueButton();
    
   }
+  const handleSwitchClick = () =>{
+    setIsDevVersion(!isDevVersion);
+    console.log(`Checkbox is checked: ${!isDevVersion}`);
+  }
+
+  
 
   //----
 
@@ -108,6 +116,15 @@ const Pega = ({ selectedFirmName }) => {
   return (
     <>
       <div className={`pega_container_${firm.name}`}>
+          <Switch
+          position="fixed_right"
+          onClick={handleSwitchClick}
+          />
+
+
+
+
+
         <div className="pega_content">
           
           <InfoMessagePega
@@ -131,6 +148,7 @@ const Pega = ({ selectedFirmName }) => {
             isVisible={isVisible.pegaEmbed}
             firm={firm}
             pegaAction={pegaAction}
+            isDevVersion = {isDevVersion}
           />
 
           <ButtonPega
