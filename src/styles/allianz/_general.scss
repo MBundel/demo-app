@@ -1,7 +1,11 @@
-// Allianz general SCSS
+@import "./colorScheme.scss";
 
-h4{
-    font-family: 'Calibri', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
+.style_default {
+  font-family: "Calibri", sans-serif;
+}
+
+h4 {
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
 }
