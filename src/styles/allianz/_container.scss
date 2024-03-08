@@ -1,0 +1,6 @@
+@import "./colorScheme.scss";
+
+@mixin container_highlighten {
+  background-color: $allianzWhite;
+  box-shadow: 1px 1px 5px -4.5px #333333;
+}

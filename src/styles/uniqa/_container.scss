@@ -1,0 +1,11 @@
+@import "./colorScheme.scss";
+
+
+@mixin  container_highlighten{
+    color: $uniqaDarkGrey;
+    font-family: "Segoe UI", "Roboto", Helvetica, Arial, serif;
+    background-color: $uniqaWhite;
+    justify-content: space-between;
+    box-shadow: 1px 1px 5px -4.5px #333333;
+
+}
