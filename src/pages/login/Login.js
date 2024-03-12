@@ -15,15 +15,15 @@ const Login = ({selectedFirmName}) => {
   
   const sendLoginRequestForm = (e) => {
     e.preventDefault();
-    // Ihre Funktion zum Senden des Formulars
+    
   };
 
   const firms = { uniqa, allianz, zurich };
-  const seF = selectedFirmName;
+
 
 
   // -------------------------------------------------------------
-  const selectedFirm = firms[seF];
+  const selectedFirm = firms[selectedFirmName];
   // -------------------------------------------------------------
 
   const components = {

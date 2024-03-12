@@ -1,4 +1,4 @@
-@import "./colorScheme.scss";
+@forward "./colorScheme.scss";
 
 @mixin button_default {
   height: 40px;
@@ -43,4 +43,11 @@
 }
 .button-regular:hover {
   color: #008cff;
+}
+
+@mixin buttonLogin{
+  @include button_strong;
+}
+@mixin buttonNewReg{
+  @include button_regular;
 }

@@ -1,4 +1,4 @@
-@import "./colorScheme";
+@forward "./colorScheme";
 
 
 @mixin button_default{
@@ -34,3 +34,10 @@
     }
 
 }
+
+@mixin buttonLogin{
+    @include button_strong;
+  }
+  @mixin buttonNewReg{
+    @include button_regular;
+  }
