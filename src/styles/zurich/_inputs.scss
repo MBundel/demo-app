@@ -1,4 +1,4 @@
-@import "./colorScheme.scss";
+@forward "./colorScheme.scss";
 
 @mixin input_default {
   font-family: "Calibri", sans-serif;

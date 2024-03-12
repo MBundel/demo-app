@@ -1,35 +1,29 @@
+
 @use "../../../styles/zurich/style.scss" as zurich;
 @use "../../../styles/uniqa/style.scss" as uniqa;
 @use "../../../styles/allianz/style.scss" as allianz;
 
 
-
-.contentLB {
-  &_allianz {
-    display: flex;
-  }
-}
-
 .buttonLogin {
   &_allianz {
-    @include allianz.button_strong;
+    @include allianz.buttonLogin;
   }
   &_uniqa {
-    @include uniqa.button_strong;
+    @include uniqa.buttonLogin;
   }
   &_zurich {
-    @include zurich.button_strong;
+    @include zurich.buttonLogin;
   }
 }
 
 .buttonNewReg {
   &_allianz{
-      @include allianz.button_strong;
+      @include allianz.buttonNewReg;
   }
   &_uniqa {
-       @include uniqa.button_regular;
+       @include uniqa.buttonNewReg;
   }
   &_zurich {
-    @include zurich.button_regular;
+    @include zurich.buttonNewReg;
   }
 }
