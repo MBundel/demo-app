@@ -44,7 +44,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible, isDevVersion }) => {
           pageID="pyWorklist"
           pageClass="Data-Portal"
           appAlias={firm.pegaAppAlias}
-          pegaServerUrl="https://4wvlxocw.pegace.net/prweb/"
+          pegaServerUrl="https://senacor01.pegalabs.io/prweb/"
           staticContentUrl="https://release.constellation.pega.io/8.23.1-266/react/prod/"
           authService="pega"
           clientId={firm.clientId}
@@ -63,6 +63,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible, isDevVersion }) => {
         ""
       )}
     </div>
+ 
   );
 };
 
