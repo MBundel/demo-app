@@ -64,4 +64,25 @@ export const zurich = {
     clientId:"67345646815270313102",
     theme: theme.zurich
 }
+export const senacor = {
+    id: 4,
+    name: 'senacor',
+    loginLabelUser: '',
+    loginPlaceholderUser: 'Benutzername',
+    loginLabelPassword: '',
+    loginPlaceholderPassword: 'Passwort',
+    loginButtonStart: 'Jetzt anmelden',
+    loginForgotName: 'Benutzername vergessen',
+    loginForgotPassword: 'Passwort neu vergeben',
+    loginHelp: '',
+    loginNewMemberLabel: 'Registrieren: \nSie sind Kunde und haben noch keinen Zugang zu Meine Zurich?',
+    loginNewMemberButton: 'Jetzt registrieren',
+    imageSrc: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Senacor_Logo_black_1c.jpg",
+    icon1 : faChevronRight,
+    newRegDesign: 'designButton',
+    loginDesignOrder: ["FormHeader", "LoginInput", "ForgotSomething", "LoginButton", "NewRegistration"],
+    pegaAppAlias: "z-claim",
+    clientId:"67345646815270313102",
+    theme: theme.zurich
+}
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { uniqa, allianz, zurich } from "./records/insuranceFirms";
+import * as insuranceFirms from "./records/insuranceFirms";
 
 // --- Import Sites
 import Home from './pages/home/Home';
@@ -22,7 +22,7 @@ function App() {
 
   const [selectedFirmName, setSelectedFirmName] = useState("zurich");
 
-  const firms = { uniqa, allianz, zurich };
+  const firms = insuranceFirms;
   
 
 

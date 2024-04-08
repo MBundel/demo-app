@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+import * as firms from "../../records/insuranceFirms";
 
 import PegaEmbed from "./components/PegaEmbed";
 import ButtonPega from "./components/ButtonPega";
@@ -25,9 +25,9 @@ const Pega = ({ selectedFirmName }) => {
     pegaEmbed: false,
   });
 
-  const firms = { uniqa, allianz, zurich };
-  const seF = selectedFirmName;
-  const firm = firms[seF];
+
+  
+  const firm = firms[selectedFirmName];
 
   //-------------------------------------------- function definitions --------------------------------------------------------
 

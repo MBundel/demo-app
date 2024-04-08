@@ -2,6 +2,7 @@
 @use "../../../styles/zurich/style.scss" as zurich;
 @use "../../../styles/uniqa/style.scss" as uniqa;
 @use "../../../styles/allianz/style.scss" as allianz;
+@use "../../../styles/senacor/style" as senacor;
 
 
 .buttonLogin {
@@ -14,6 +15,9 @@
   &_zurich {
     @include zurich.buttonLogin;
   }
+  &_senacor {
+    @include senacor.buttonLogin;
+  }
 }
 
 .buttonNewReg {
@@ -25,5 +29,8 @@
   }
   &_zurich {
     @include zurich.buttonNewReg;
+  }
+  &_senacor {
+    @include senacor.buttonNewReg;
   }
 }

@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+import * as selectedFirms from "../../records/insuranceFirms";
 import "./nav.scss";
 
 import { Link, useLocation } from "react-router-dom";
@@ -8,11 +8,11 @@ function Navbar({ selectedFirmName }) {
   const [currentPath, setCurrentPath] = useState("");
   const location = useLocation();
 
-  const firms = { uniqa, allianz, zurich };
-  const seF = selectedFirmName;
+  const firms = selectedFirms;
+
 
   // -------------------------------------------------------------
-  const selectedFirm = firms[seF];
+  const selectedFirm = firms[selectedFirmName];
 
   useEffect(() => {
     setCurrentPath(location.pathname);

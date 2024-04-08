@@ -6,7 +6,7 @@ import NewRegistration from "./components/questions/NewRegistration";
 import LoginInput from "./components/LoginInput";
 import LoginButton from "./components/LoginButton";
 
-import { uniqa, allianz, zurich } from "../../records/insuranceFirms";
+import * as firms from "../../records/insuranceFirms";
 
 import "./login.scss";
 
@@ -18,7 +18,6 @@ const Login = ({selectedFirmName}) => {
     
   };
 
-  const firms = { uniqa, allianz, zurich };
 
 
 
