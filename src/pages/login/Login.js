@@ -10,27 +10,21 @@ import * as firms from "../../records/insuranceFirms";
 
 import "./login.scss";
 
-const Login = ({selectedFirmName}) => {
-
-  
+const Login = ({ selectedFirmName }) => {
   const sendLoginRequestForm = (e) => {
     e.preventDefault();
-    
   };
-
-
-
 
   // -------------------------------------------------------------
   const selectedFirm = firms[selectedFirmName];
   // -------------------------------------------------------------
 
   const components = {
-    FormHeader:       <FormHeader       selectedFirm={selectedFirm} />,
-    LoginInput:       <LoginInput       selectedFirm={selectedFirm} />,
-    ForgotSomething:  <ForgotSomething  selectedFirm={selectedFirm} />,
-    LoginButton:      <LoginButton      selectedFirm={selectedFirm} />,
-    NewRegistration:  <NewRegistration  selectedFirm={selectedFirm} />
+    FormHeader:       <FormHeader selectedFirm={selectedFirm} />,
+    LoginInput:       <LoginInput selectedFirm={selectedFirm} />,
+    ForgotSomething:  <ForgotSomething selectedFirm={selectedFirm} />,
+    LoginButton:      <LoginButton selectedFirm={selectedFirm} />,
+    NewRegistration:  <NewRegistration selectedFirm={selectedFirm} />,
   };
   const order = selectedFirm.loginDesignOrder;
 
@@ -49,9 +43,6 @@ const Login = ({selectedFirmName}) => {
           <form>{order.map((component) => components[component])}</form>
         </form>
       </div>
-
-        <div className="defaultButton strongButton"></div>
-
     </div>
   );
 };

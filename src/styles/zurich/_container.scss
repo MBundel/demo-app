@@ -1,9 +1,21 @@
 @forward "./colorScheme.scss";
 
-
-@mixin mainLoginContent{
-   
+@mixin mainLoginContent {
+  font-family: "Calibri", sans-serif;
+  justify-content: center;
+  & input[type="password"],
+  input[type="text"] {
+    width: 75%;
+    height: 60px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 5px;
+    padding-left: 25px;
+    color: $zurichLightBlue;
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
-@mixin pega_container{
-    background-color: $zurichBeige;
+@mixin pega_container {
+  background-color: $zurichBeige;
 }

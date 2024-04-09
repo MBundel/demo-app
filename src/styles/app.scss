@@ -76,21 +76,21 @@ body {
 }
 
 // ------------ LOGIN FORMS --------------------
-.input {
-  &_zurich {
-    @include zurich.input_container;
-  }
-  &_senacor {
-    @include senacor.input_container;
-  }
-}
+// .input {
+  // &_zurich {
+    // @include zurich.input_container;
+  // }
+  // &_senacor {
+    // @include senacor.input_container;
+  // }
+// }
 
 .mainLoginContent {
   &_uniqa {
-    @include uniqa.container_highlighten;
+    @include uniqa.mainLoginContent;
   }
   &_zurich {
-    @include zurich.input_default;
+    @include zurich.mainLoginContent;
   }
   &_allianz {
     @include allianz.mainLoginContent;
