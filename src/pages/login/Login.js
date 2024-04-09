@@ -36,7 +36,7 @@ const Login = ({selectedFirmName}) => {
 
   return (
     <div>
-      <div className={`mainLoginContent_${selectedFirm.name}`}>
+      <div className={`mainLoginContent_${selectedFirm.name} mainLoginDefault`}>
         <form
           name="main"
           id="pegaLogin"

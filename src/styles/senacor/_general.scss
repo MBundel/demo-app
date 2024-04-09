@@ -1,0 +1,21 @@
+@forward "./colorScheme.scss";
+
+@mixin a{
+
+    & a:visited {
+         color: $senacorBlue;
+       }
+   }
+
+
+@mixin style_default{
+    @include a;
+    color: $senacorWhite;
+    background-color: $senacorGrey;
+    padding-bottom: 350px;
+    font-size:  20px ;
+   
+    font-family: "Calibri", sans-serif;
+
+    
+}

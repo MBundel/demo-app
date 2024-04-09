@@ -115,7 +115,7 @@ const Pega = ({ selectedFirmName }) => {
   //--------------------------------------------JSX --------------------------------------------------------
   return (
     <>
-      <div className={`pega_container_${firm.name}`}>
+      <div className={`pega_container_${firm.name} pega_defaultContainer`}>
           <Switch
           position="fixed_right"
           onClick={handleSwitchClick}

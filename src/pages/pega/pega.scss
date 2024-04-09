@@ -1,6 +1,7 @@
 @use "../../styles/zurich/style.scss" as zurich;
 @use "../../styles/uniqa/style.scss" as uniqa;
 @use "../../styles/allianz/style.scss" as allianz;
+@use "../../styles/senacor/style.scss" as senacor;
 
 @import "../../styles/colorSchemes.scss";
 
@@ -15,25 +16,31 @@
     flex-direction: column;
     align-items: center;
   }
-  &_container {
-    @mixin default {
-      max-width: 1480px;
-      margin: auto;
-    }
-
-    &_uniqa {
-      @include default;
-      background-color: $uniqaWhite;
-    }
-    &_allianz {
-      @include default;
-      background-color: $allianzWhite;
-    }
-    &_zurich {
-      @include default;
-      background-color: $zurichBeige;
-    }
+  &_defaultContainer {
+    max-width: 1480px;
+    margin: auto;
   }
+  // &_container {
+
+
+  //   &_uniqa {
+   
+  //     background-color: $uniqaWhite;
+  //   }
+  //   &_allianz {
+     
+  //     background-color: $allianzWhite;
+  //   }
+  //   &_zurich {
+ 
+  //     background-color: $zurichBeige;
+  //   }
+  //   &_senacor {
+    
+  //     background-color: $senacorGrey;
+  //     color: $senacorWhite;
+  //   }
+  // }
 }
 
 

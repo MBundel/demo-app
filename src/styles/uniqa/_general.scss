@@ -1,7 +1,8 @@
 @forward "./colorScheme.scss";
 
 
-.style_default{
+@mixin style_default{
     font-family: "Segoe UI", "Roboto", Helvetica, Arial, serif;
 
 }
+

@@ -1,36 +1,36 @@
 
-@use "../../../styles/zurich/style.scss" as zurich;
-@use "../../../styles/uniqa/style.scss" as uniqa;
-@use "../../../styles/allianz/style.scss" as allianz;
-@use "../../../styles/senacor/style" as senacor;
+// @use "../../../styles/zurich/style.scss" as zurich;
+// @use "../../../styles/uniqa/style.scss" as uniqa;
+// @use "../../../styles/allianz/style.scss" as allianz;
+// @use "../../../styles/senacor/style" as senacor;
 
 
-.buttonLogin {
-  &_allianz {
-    @include allianz.buttonLogin;
-  }
-  &_uniqa {
-    @include uniqa.buttonLogin;
-  }
-  &_zurich {
-    @include zurich.buttonLogin;
-  }
-  &_senacor {
-    @include senacor.buttonLogin;
-  }
-}
+// .buttonLogin {
+//   &_allianz {
+//     @include allianz.buttonLogin;
+//   }
+//   &_uniqa {
+//     @include uniqa.buttonLogin;
+//   }
+//   &_zurich {
+//     @include zurich.buttonLogin;
+//   }
+//   &_senacor {
+//     @include senacor.buttonLogin;
+//   }
+// }
 
-.buttonNewReg {
-  &_allianz{
-      @include allianz.buttonNewReg;
-  }
-  &_uniqa {
-       @include uniqa.buttonNewReg;
-  }
-  &_zurich {
-    @include zurich.buttonNewReg;
-  }
-  &_senacor {
-    @include senacor.buttonNewReg;
-  }
-}
+// .buttonNewReg {
+//   &_allianz{
+//       @include allianz.buttonNewReg;
+//   }
+//   &_uniqa {
+//        @include uniqa.buttonNewReg;
+//   }
+//   &_zurich {
+//     @include zurich.buttonNewReg;
+//   }
+//   &_senacor {
+//     @include senacor.buttonNewReg;
+//   }
+// }

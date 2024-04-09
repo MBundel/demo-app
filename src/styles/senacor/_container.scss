@@ -1,0 +1,17 @@
+@forward "./colorScheme.scss";
+
+
+@mixin input_container{
+    margin-top: 25px;
+}
+
+@mixin white_border{
+    padding: 25px 10px;
+    border: 2px solid $senacorWhite;
+    border-radius: 5px;
+    width: 40%;
+
+    @media screen and (max-width:768px) {
+        width: 90%;
+      }
+}

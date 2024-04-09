@@ -1,6 +1,7 @@
 @use "../../../../styles/zurich/style" as zurich;
 @use "../../../../styles/uniqa/style" as uniqa;
 @use "../../../../styles/allianz/style" as allianz;
+@use "../../../../styles/senacor/style" as senacor;
 @import "../../../../styles/colorSchemes.scss";
 
 .contentNR{
@@ -29,14 +30,17 @@
 
 }
 
-.buttonNewReg{
-    &_zurich{
-        @include zurich.button-regular;
-    }
-    &_uniqa{
-        @include uniqa.button-regular;
-    }
-    &_allianz{
-        @include allianz.button-regular;
-    }
-}
+// .buttonNewReg{
+//     &_zurich{
+//         @include zurich.button-regular;
+//     }
+//     &_uniqa{
+//         @include uniqa.button-regular;
+//     }
+//     &_allianz{
+//         @include allianz.button-regular;
+//     }
+//     &_senacor{
+//         @include senacor.button-regular;
+//     }
+// }

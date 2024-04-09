@@ -20,7 +20,7 @@ import './styles/app.scss'
 
 function App() {
 
-  const [selectedFirmName, setSelectedFirmName] = useState("zurich");
+  const [selectedFirmName, setSelectedFirmName] = useState("senacor");
 
   const firms = insuranceFirms;
   

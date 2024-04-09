@@ -1,19 +1,18 @@
 @forward "./colorScheme.scss";
 
 @mixin button_default {
-  color: $senacorWhite;
-  font-size: 16px;
-  font-weight: 600;
+  color: $senacorGrey;
+  font-size: 15px;
+  font-weight: 900;
   font-family: inherit;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   border: none;
-  border-radius: 5px;
-  padding: 10px 30px;
-  // min-width: 320px;   
-  // width: fit-content; 
+  border-radius: 5px 0 0 5px  ;
+  padding: 5px 5px;
+  width: 200px;
   height: 45px;
-  margin: 30px auto;
+  margin: 10px auto;
   justify-content: center;
   cursor: pointer;
 
@@ -22,29 +21,31 @@
   }
 
   &:hover {
-    background-color: $allianzMiddleBlue;
+    background-color: $senacorWhite;
+    color: $senacorBlue;
   }
 }
 
 @mixin button_regular {
   @include button_default;
-  background-color: $allianzLightBlue;
+  background-color: $senacorBlue;
+ 
 }
 
 @mixin button_strong {
   @include button_default;
-  background-color: $allianzDarkBlue;
+  background-color: $senacorYellow;
   width: auto;
  
 }
 
 @mixin button_deactivated {
   @include button_default;
-  background-color: $allianzGrey;  
+  background-color: $senacorGrey;  
 }
 
 @mixin buttonLogin{
-  @include button_strong;
+  @include button_regular;
 }
 @mixin buttonNewReg{
   @include button_regular;

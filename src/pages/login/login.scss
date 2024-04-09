@@ -1,9 +1,10 @@
 @use "../../styles/zurich/style.scss" as zurich;
 @use "../../styles/uniqa/style.scss" as uniqa;
+@use "../../styles/senacor/style.scss" as senacor;
 @import "../../styles/colorSchemes.scss";
 
 
-@mixin mainLoginDefault {
+.mainLoginDefault {
   margin: auto;
   margin-top: 15px;
   padding: 16px;
@@ -17,28 +18,33 @@
  
 }
 
-.mainLoginContent {
-  &_uniqa {
-    @include mainLoginDefault;
-    @include uniqa.container_highlighten;
+// .mainLoginContent {
+//   &_uniqa {
+//     @include mainLoginDefault;
+//     @include uniqa.container_highlighten;
     
-  }
-  &_zurich{
-    @include mainLoginDefault;
-    @include zurich.input_default;
-  }
+//   }
+//   &_zurich{
+//     @include mainLoginDefault;
+//     @include zurich.input_default;
+//   }
 
-  &_allianz {
-    @include mainLoginDefault;
+//   &_allianz {
+//     @include mainLoginDefault;
     
-    justify-content: center;
-  }
+//     justify-content: center;
+//   }
 
-  &_allianz {
-    background-color: $allianzWhite;
-    box-shadow: 1px 1px 5px -4.5px #333333;
-  }
-}
+//   &_allianz {
+//     background-color: $allianzWhite;
+//     box-shadow: 1px 1px 5px -4.5px #333333;
+//   }
+//   &_senacor {
+//     @include mainLoginDefault;
+//     @include senacor.white_border;
+//   }
+
+// }
 
 input[type="password"], input[type="text"] {
   width: 100%;

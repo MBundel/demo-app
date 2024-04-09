@@ -1,4 +1,8 @@
 @use "./zurich/style" as zurich;
+@use "./senacor/style" as senacor;
+@use "./uniqa/style" as uniqa;
+@use "./allianz/style" as allianz;
+
 @import "./colorSchemes.scss";
 
 html,
@@ -11,13 +15,106 @@ body {
   }
 }
 
+// ----- Folgendes ist  aktuell leider nicht möglich: ----------- 09.04.24
+// $firms: uniqa, zurich, allianz, senacor;
+// @each $firm in $firms {
+  // .app {
+    // &_#{$firm} {
+      // @include #{$firm}.style_default;
+    // }
+  // }
+// }
+
 .app {
   &_uniqa {
-    background-color: $uniqaLightBlue;
-    margin: 0;
-    padding-bottom: 350px;
+    @include uniqa.style_default;
   }
   &_zurich {
     @include zurich.style_default;
+  }
+  &_senacor {
+    @include senacor.style_default;
+  }
+  &_allianz {
+    @include allianz.style_default;
+  }
+}
+
+// ------------ BUTTONS --------------------
+
+.buttonNewReg {
+  &_zurich {
+    @include zurich.button-regular;
+  }
+  &_uniqa {
+    @include uniqa.button-regular;
+  }
+  &_allianz {
+    @include allianz.button-regular;
+  }
+  &_senacor {
+    @include senacor.button-regular;
+  }
+}
+
+.buttonLogin {
+  &_allianz {
+    @include allianz.buttonLogin;
+  }
+  &_uniqa {
+    @include uniqa.buttonLogin;
+  }
+  &_zurich {
+    @include zurich.buttonLogin;
+  }
+  &_senacor {
+    @include senacor.buttonLogin;
+  }
+}
+
+// ------------ LOGIN FORMS --------------------
+.input {
+  &_zurich {
+    @include zurich.input_container;
+  }
+  &_senacor {
+    @include senacor.input_container;
+  }
+}
+
+.mainLoginContent {
+  &_uniqa {
+    @include uniqa.container_highlighten;
+  }
+  &_zurich {
+    @include zurich.input_default;
+  }
+  &_allianz {
+    background-color: $allianzWhite;
+    box-shadow: 1px 1px 5px -4.5px #333333;
+    justify-content: center;
+  }
+  &_senacor {
+    @include senacor.white_border;
+  }
+}
+
+// ------------ PEGA --------------------
+
+.pega {
+  &_container {
+    &_uniqa {
+      background-color: $uniqaWhite;
+    }
+    &_allianz {
+      background-color: $allianzWhite;
+    }
+    &_zurich {
+      background-color: $zurichBeige;
+    }
+    &_senacor {
+      background-color: $senacorGrey;
+      color: $senacorWhite;
+    }
   }
 }

@@ -1,6 +1,6 @@
 @forward "./colorScheme.scss";
 
-.style_default {
+@mixin style_default {
   font-family: "Calibri", sans-serif;
 }
 
