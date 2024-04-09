@@ -4,3 +4,12 @@
   background-color: $allianzWhite;
   box-shadow: 1px 1px 5px -4.5px #333333;
 }
+
+@mixin mainLoginContent{
+  background-color: $allianzWhite;
+  box-shadow: 1px 1px 5px -4.5px #333333;
+  justify-content: center;
+}
+@mixin pega_container{
+  background-color: $allianzWhite;
+}

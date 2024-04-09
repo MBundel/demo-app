@@ -15,3 +15,10 @@
         width: 90%;
       }
 }
+@mixin mainLoginContent{
+    @include white_border;
+}
+@mixin pega_container{
+    background-color: $senacorWhite;
+    color: $senacorWhite;
+}

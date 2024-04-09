@@ -24,6 +24,9 @@ body {
     // }
   // }
 // }
+// mögliche Lösung:
+// https://stackoverflow.com/questions/40377745/how-to-use-variable-for-include-name-inide-each-loop-scss
+
 
 .app {
   &_uniqa {
@@ -90,12 +93,10 @@ body {
     @include zurich.input_default;
   }
   &_allianz {
-    background-color: $allianzWhite;
-    box-shadow: 1px 1px 5px -4.5px #333333;
-    justify-content: center;
+    @include allianz.mainLoginContent;
   }
   &_senacor {
-    @include senacor.white_border;
+    @include senacor.mainLoginContent;
   }
 }
 
@@ -104,17 +105,16 @@ body {
 .pega {
   &_container {
     &_uniqa {
-      background-color: $uniqaWhite;
+      @include uniqa.pega_container
     }
     &_allianz {
-      background-color: $allianzWhite;
+      @include allianz.pega_container
     }
     &_zurich {
-      background-color: $zurichBeige;
+      @include zurich.pega_container
     }
     &_senacor {
-      background-color: $senacorGrey;
-      color: $senacorWhite;
+      @include senacor.pega_container
     }
   }
 }

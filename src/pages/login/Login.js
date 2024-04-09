@@ -49,6 +49,9 @@ const Login = ({selectedFirmName}) => {
           <form>{order.map((component) => components[component])}</form>
         </form>
       </div>
+
+        <div className="defaultButton strongButton"></div>
+
     </div>
   );
 };
