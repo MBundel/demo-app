@@ -3,13 +3,13 @@ import './loginButton.scss';
 import { Link } from 'react-router-dom';
 
 const LoginButton = (props) => {
-  const firm = props.selectedFirm;
+  const company = props.selectedCompany;
 
   return (
-    <div className={`contentLB_${firm.name}`}>
+    <div className={`contentLB_${company.name}`}>
    
       {/* type:"submit" */}
-      <Link style={{width:"0"}} to="/pega" ><button className={`buttonLogin_${firm.name}`}>{firm.loginButtonStart} </button></Link>
+      <Link style={{width:"0"}} to="/pega" ><button className={`buttonLogin_${company.name}`}>{company.loginButtonStart} </button></Link>
     </div>
   );
 };

@@ -3,19 +3,19 @@ import './newRegistration.scss'
 
 const NewRegistration = (props) => {
 
-    const firm = props.selectedFirm;
+    const company = props.selectedCompany;
 
     const designs = {
-        designButton:  <button className={`buttonNewReg_${firm.name}`}>{firm.loginNewMemberButton}</button>,
-        designLink:  <a href='/'> {firm.loginNewMemberButton}</a>
+        designButton:  <button className={`buttonNewReg_${company.name}`}>{company.loginNewMemberButton}</button>,
+        designLink:  <a href='/'> {company.loginNewMemberButton}</a>
     }
     
   return (
-    <div className={`contentNR_${firm.name}`}>
+    <div className={`contentNR_${company.name}`}>
            
 
-        <p>{firm.loginNewMemberLabel} &nbsp;</p> 
-      {designs[firm.newRegDesign]}
+        <p>{company.loginNewMemberLabel} &nbsp;</p> 
+      {designs[company.newRegDesign]}
       
 
 

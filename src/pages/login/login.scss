@@ -18,33 +18,7 @@
  
 }
 
-// .mainLoginContent {
-//   &_uniqa {
-//     @include mainLoginDefault;
-//     @include uniqa.container_highlighten;
-    
-//   }
-//   &_zurich{
-//     @include mainLoginDefault;
-//     @include zurich.input_default;
-//   }
 
-//   &_allianz {
-//     @include mainLoginDefault;
-    
-//     justify-content: center;
-//   }
-
-//   &_allianz {
-//     background-color: $allianzWhite;
-//     box-shadow: 1px 1px 5px -4.5px #333333;
-//   }
-//   &_senacor {
-//     @include mainLoginDefault;
-//     @include senacor.white_border;
-//   }
-
-// }
 
 input[type="password"], input[type="text"] {
   width: 100%;

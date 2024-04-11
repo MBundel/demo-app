@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ForgotSomething = (props) => {
 
-    const firm = props.selectedFirm;
-    console.log(firm.name)
-    const icon = firm.icon1 !== '' ? <FontAwesomeIcon icon={firm.icon1} /> : null;
+    const company = props.selectedCompany;
+    console.log(company.name)
+    const icon = company.icon1 !== '' ? <FontAwesomeIcon icon={company.icon1} /> : null;
     const spacing = icon ? <span className="spacing">   </span> :"";
  
 
@@ -17,11 +17,11 @@ const ForgotSomething = (props) => {
  * FS = FogortSomething for CSS classes
  */
   return (
-    <div className={`contentFS_${firm.name}`}>
+    <div className={`contentFS_${company.name}`}>
 
-        {firm.loginForgotName     !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon}{spacing}{firm.loginForgotName}    </a></div> : '' }
-        {firm.loginForgotPassword !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon}{spacing}{firm.loginForgotPassword}</a></div> : '' }
-        {firm.loginHelp           !== '' ? <div><a className={`aFS_${firm.name}`} href="/">{icon}{spacing}{firm.loginHelp}          </a></div> : '' }
+        {company.loginForgotName     !== '' ? <div><a className={`aFS_${company.name}`} href="/">{icon}{spacing}{company.loginForgotName}    </a></div> : '' }
+        {company.loginForgotPassword !== '' ? <div><a className={`aFS_${company.name}`} href="/">{icon}{spacing}{company.loginForgotPassword}</a></div> : '' }
+        {company.loginHelp           !== '' ? <div><a className={`aFS_${company.name}`} href="/">{icon}{spacing}{company.loginHelp}          </a></div> : '' }
        
         
   

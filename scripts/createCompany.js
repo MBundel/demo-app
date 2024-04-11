@@ -11,13 +11,15 @@ inquirer
     },
   ])
   .then(async (answers) => {
-    const companyName = formatFileName(answers.name);
-    const folderPath = `src/styles/${companyName}`;
-    const fileNameToContent = importFileContent(companyName);
-    // createScssFiles(fileNameToContent, folderPath);
-    // updateCompaniesList(companies, companyName);
+    const companyName = formatFileName(answers.name);    
+    
+    // -----!!!  MAIN FUNCTIONS  !!!-----
+
+    createScssFiles(companyName);
+    updateCompaniesList(companies, companyName);
     updateCompaniesAttributes(companyName);
     updateAppScss(companies);
+    
   })
   .catch((error) => {
     creatingFolderFailedErrorMessage(error);
@@ -45,7 +47,7 @@ const updateAppScss = async (companies) => {
   const content = buildAppSccFileContent(companies);
   try {
     await fs.writeFile(appScss, content);
-    console.log(`Eine neue Zeile wurde zur Datei ${appScss} hinzugefügt.`);
+    console.log(` ${appScss} wurde erfolgreich aktualisiert.`);
   } catch (err) {
     console.error(err);
   }
@@ -61,7 +63,7 @@ const updateCompaniesList = async (companies, companyName) => {
   )};`;
   try {
     await fs.writeFile(companyRecordFile, updatedCompaniesList);
-    console.log(`${companyName} hinzugefügt.`);
+    console.log(`${companyName} wurde zu ${companyRecordFile} hinzugefügt.`);
   } catch (err) {
     console.error(err);
   }
@@ -75,7 +77,7 @@ const updateCompaniesAttributes = async (companyName) => {
   try {
      let data = await fs.readFile(companyRecordFile, 'utf8')
     await fs.writeFile(companyRecordFile, data + updatedCompany, 'utf8');
-    console.log(`${companyName} hinzugefügt.`);
+    console.log(`${companyName} wurde zu ${companyRecordFile} hinzugefügt.`);
   } catch (err) {
     console.error(err);
   }
@@ -97,7 +99,9 @@ const importFileContent = (companyName) => {
 
 // ----------------
 
-const createScssFiles = (fileNameToContent, folderPath) => {
+const createScssFiles = (companyName) => {
+  const fileNameToContent = importFileContent(companyName);
+  const folderPath = `src/styles/${companyName}`;
   fs.access(folderPath)
     .then(async () => {
       console.log(`Das Verzeichnis ${folderPath} existiert bereits.`);

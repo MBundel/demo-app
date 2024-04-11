@@ -99,7 +99,7 @@ $${folderName}Black:            #0D160B;
      }
   
   
-  @mixin style_default{
+  @mixin app{
       @include a;
       color: $${folderName}White;
       background-color: $${folderName}Grey;
