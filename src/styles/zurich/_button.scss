@@ -35,37 +35,37 @@
 
 }
 
+
+
+@mixin defaultButton{
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: inherit;
+  letter-spacing: -.3px;
+  border: none;
+  border-radius: 30px;
+  width: auto;
+  height: 56px;
+  padding:   0  25px ;
+  margin:  20px 0;
+  justify-content: center;
+}
+
+.strongButton{
+  @include defaultButton;
+  background-color: blue;
+}
+.lightButton{
+  @include defaultButton;
+  background-color: lightblue;
+}
+
+
 @mixin buttonLogin{
     @include button_strong;
   }
   @mixin buttonNewReg{
     @include button_regular;
   }
-
-
-  @mixin defaultButton{
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    font-weight: 100;
-    font-family: inherit;
-    letter-spacing: -.3px;
-    border: none;
-    border-radius: 30px;
-    width: auto;
-    height: 56px;
-    padding:   0  25px ;
-    margin:  20px 0;
-    justify-content: center;
-  }
-
-  .strongButton{
-    @include defaultButton;
-    background-color: blue;
-  }
-  .lightButton{
-    @include defaultButton;
-    background-color: lightblue;
-  }
-
-

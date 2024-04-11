@@ -87,6 +87,6 @@ export const senacor = {
     loginDesignOrder: ["FormHeader", "LoginInput", "LoginButton", "NewRegistration", "ForgotSomething"],
     pegaAppAlias: "z-claim",
     clientId:"67345646815270313102",
-    theme: theme.zurich
+    theme: theme.senacor
 }
 

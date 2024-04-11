@@ -38,4 +38,12 @@ export const zurich = {
     components: "all",
     base: "xx"
 }
+export const senacor = {
+    components: "all",
+    base: "xx"
+}
+export const regular = {
+    components: "all",
+    base: "xx"
+}
 

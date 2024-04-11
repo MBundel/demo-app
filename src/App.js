@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import * as insuranceFirms from "./records/insuranceFirms";
+import * as companies from "./records/companies";
 
 // --- Import Sites
 import Home from './pages/home/Home';
@@ -20,29 +20,28 @@ import './styles/app.scss'
 
 function App() {
 
-  const [selectedFirmName, setSelectedFirmName] = useState("senacor");
+  const [selectedCompanyName, setSelectedCompanyName] = useState("senacor");
 
-  const firms = insuranceFirms;
-  
+
 
 
   // -------------------------------------------------------------
-  const firm = firms[selectedFirmName];
+  const company = companies[selectedCompanyName];
 
   
   return (
-    <div className={`app_${firm.name}`}>
+    <div className={`app_${company.name}`}>
       <ErrorBoundary>
         <Router>
-          <Nav selectedFirmName={selectedFirmName}/>
+          <Nav selectedCompanyName={selectedCompanyName}/>
           <Routes>
-            <Route path="/"            element={<Home         selectedFirmName={selectedFirmName} />} />
-            <Route path="/login"       element={<Login        selectedFirmName={selectedFirmName} />} />
-            <Route path="/pega"        element={<Pega         selectedFirmName={selectedFirmName} />} /> 
-            <Route path="/dashboard"   element={<Dashboard    selectedFirmName={selectedFirmName} />} /> 
+            <Route path="/"            element={<Home         selectedCompanyName={selectedCompanyName} />} />
+            <Route path="/login"       element={<Login        selectedCompanyName={selectedCompanyName} />} />
+            <Route path="/pega"        element={<Pega         selectedCompanyName={selectedCompanyName} />} /> 
+            <Route path="/dashboard"   element={<Dashboard    selectedCompanyName={selectedCompanyName} />} /> 
           </Routes>
         </Router>
-        <Option handleSelectFirmName={setSelectedFirmName}/> 
+        <Option handleSelectCompanyName={setSelectedCompanyName}/> 
       </ErrorBoundary>
     </div>
   );

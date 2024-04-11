@@ -6,31 +6,31 @@ import NewRegistration from "./components/questions/NewRegistration";
 import LoginInput from "./components/LoginInput";
 import LoginButton from "./components/LoginButton";
 
-import * as firms from "../../records/insuranceFirms";
+import * as companies from "../../records/companies";
 
 import "./login.scss";
 
-const Login = ({ selectedFirmName }) => {
+const Login = ({ selectedCompanyName }) => {
   const sendLoginRequestForm = (e) => {
     e.preventDefault();
   };
 
   // -------------------------------------------------------------
-  const selectedFirm = firms[selectedFirmName];
+  const selectedCompany = companies[selectedCompanyName];
   // -------------------------------------------------------------
 
   const components = {
-    FormHeader:       <FormHeader selectedFirm={selectedFirm} />,
-    LoginInput:       <LoginInput selectedFirm={selectedFirm} />,
-    ForgotSomething:  <ForgotSomething selectedFirm={selectedFirm} />,
-    LoginButton:      <LoginButton selectedFirm={selectedFirm} />,
-    NewRegistration:  <NewRegistration selectedFirm={selectedFirm} />,
+    FormHeader:       <FormHeader selectedCompany={selectedCompany} />,
+    LoginInput:       <LoginInput selectedCompany={selectedCompany} />,
+    ForgotSomething:  <ForgotSomething selectedCompany={selectedCompany} />,
+    LoginButton:      <LoginButton selectedCompany={selectedCompany} />,
+    NewRegistration:  <NewRegistration selectedCompany={selectedCompany} />,
   };
-  const order = selectedFirm.loginDesignOrder;
+  const order = selectedCompany.loginDesignOrder;
 
   return (
     <div>
-      <div className={`mainLoginContent_${selectedFirm.name} mainLoginDefault`}>
+      <div className={`mainLoginContent_${selectedCompany.name} mainLoginDefault`}>
         <form
           name="main"
           id="pegaLogin"

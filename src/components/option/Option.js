@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "./option.scss";
 
-import * as insuranceFirms from "../../records/insuranceFirms";
+import * as importedCompanies from "../../records/companies";
 
 // Import Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 
-const Option = ({ handleSelectFirmName }) => {
+const Option = ({ handleSelectCompanyName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const firms = Object.values(insuranceFirms);
+  const companies = Object.values(importedCompanies);
 
   const handleOpenOption = () => {
     setIsOpen(!isOpen);
@@ -31,12 +31,12 @@ const Option = ({ handleSelectFirmName }) => {
           
 
 
-          {firms.map((firm) => (
+          {companies.map((company) => (
             <img
-              key={firm.name}
-              alt={firm.name}
-              src={firm.imageSrc}
-              onClick={() => {handleSelectFirmName(firm.name);
+              key={company.name}
+              alt={company.name}
+              src={company.imageSrc}
+              onClick={() => {handleSelectCompanyName(company.name);
               }}
             />
           ))}

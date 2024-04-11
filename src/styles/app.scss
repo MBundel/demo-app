@@ -1,120 +1,70 @@
 @use "./zurich/style" as zurich;
 @use "./senacor/style" as senacor;
-@use "./uniqa/style" as uniqa;
 @use "./allianz/style" as allianz;
+@use "./uniqa/style" as uniqa;
 
-@import "./colorSchemes.scss";
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-
-  a {
-    text-decoration: none;
-  }
+html, 
+body { 
+	 margin: 0; 
+	 padding: 0; 
+ 
+	a { 
+		 text-decoration: none; 
+	 } 
 }
-
-// ----- Folgendes ist  aktuell leider nicht möglich: ----------- 09.04.24
-// $firms: uniqa, zurich, allianz, senacor;
-// @each $firm in $firms {
-  // .app {
-    // &_#{$firm} {
-      // @include #{$firm}.style_default;
-    // }
-  // }
-// }
-// mögliche Lösung:
-// https://stackoverflow.com/questions/40377745/how-to-use-variable-for-include-name-inide-each-loop-scss
-
-
 .app {
-  &_uniqa {
-    @include uniqa.style_default;
-  }
-  &_zurich {
-    @include zurich.style_default;
-  }
-  &_senacor {
-    @include senacor.style_default;
-  }
-  &_allianz {
-    @include allianz.style_default;
-  }
+	&_zurich {
+		 @include zurich.app; 
+	 } 
+	&_senacor {
+		 @include senacor.app; 
+	 } 
+	&_allianz {
+		 @include allianz.app; 
+	 } 
+	&_uniqa {
+		 @include uniqa.app; 
+	 } 
 }
-
-// ------------ BUTTONS --------------------
-
 .buttonNewReg {
-  &_zurich {
-    @include zurich.button-regular;
-  }
-  &_uniqa {
-    @include uniqa.button-regular;
-  }
-  &_allianz {
-    @include allianz.button-regular;
-  }
-  &_senacor {
-    @include senacor.button-regular;
-  }
+	&_zurich {
+		 @include zurich.buttonNewReg; 
+	 } 
+	&_senacor {
+		 @include senacor.buttonNewReg; 
+	 } 
+	&_allianz {
+		 @include allianz.buttonNewReg; 
+	 } 
+	&_uniqa {
+		 @include uniqa.buttonNewReg; 
+	 } 
 }
-
 .buttonLogin {
-  &_allianz {
-    @include allianz.buttonLogin;
-  }
-  &_uniqa {
-    @include uniqa.buttonLogin;
-  }
-  &_zurich {
-    @include zurich.buttonLogin;
-  }
-  &_senacor {
-    @include senacor.buttonLogin;
-  }
+	&_zurich {
+		 @include zurich.buttonLogin; 
+	 } 
+	&_senacor {
+		 @include senacor.buttonLogin; 
+	 } 
+	&_allianz {
+		 @include allianz.buttonLogin; 
+	 } 
+	&_uniqa {
+		 @include uniqa.buttonLogin; 
+	 } 
 }
-
-// ------------ LOGIN FORMS --------------------
-// .input {
-  // &_zurich {
-    // @include zurich.input_container;
-  // }
-  // &_senacor {
-    // @include senacor.input_container;
-  // }
-// }
-
 .mainLoginContent {
-  &_uniqa {
-    @include uniqa.mainLoginContent;
-  }
-  &_zurich {
-    @include zurich.mainLoginContent;
-  }
-  &_allianz {
-    @include allianz.mainLoginContent;
-  }
-  &_senacor {
-    @include senacor.mainLoginContent;
-  }
-}
-
-// ------------ PEGA --------------------
-
-.pega {
-  &_container {
-    &_uniqa {
-      @include uniqa.pega_container
-    }
-    &_allianz {
-      @include allianz.pega_container
-    }
-    &_zurich {
-      @include zurich.pega_container
-    }
-    &_senacor {
-      @include senacor.pega_container
-    }
-  }
+	&_zurich {
+		 @include zurich.mainLoginContent; 
+	 } 
+	&_senacor {
+		 @include senacor.mainLoginContent; 
+	 } 
+	&_allianz {
+		 @include allianz.mainLoginContent; 
+	 } 
+	&_uniqa {
+		 @include uniqa.mainLoginContent; 
+	 } 
 }

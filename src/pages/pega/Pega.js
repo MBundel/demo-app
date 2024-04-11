@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as firms from "../../records/insuranceFirms";
+import * as companies from "../../records/companies";
 
 import PegaEmbed from "./components/PegaEmbed";
 import ButtonPega from "./components/ButtonPega";
@@ -9,7 +9,7 @@ import "./pega.scss";
 import Switch from "../../components/controls/Switch";
 
 
-const Pega = ({ selectedFirmName }) => {
+const Pega = ({ selectedCompanyName }) => {
   //-------------------------------------------- field definitions --------------------------------------------------------
 
   const [pegaAction, setPegaAction] = useState(""); // "createCase" || "openCase" || "openPage"
@@ -27,7 +27,7 @@ const Pega = ({ selectedFirmName }) => {
 
 
   
-  const firm = firms[selectedFirmName];
+  const company = companies[selectedCompanyName];
 
   //-------------------------------------------- function definitions --------------------------------------------------------
 
@@ -115,7 +115,7 @@ const Pega = ({ selectedFirmName }) => {
   //--------------------------------------------JSX --------------------------------------------------------
   return (
     <>
-      <div className={`pega_container_${firm.name} pega_defaultContainer`}>
+      <div className={`pega_container_${company.name} pega_defaultContainer`}>
           <Switch
           position="fixed_right"
           onClick={handleSwitchClick}
@@ -132,13 +132,13 @@ const Pega = ({ selectedFirmName }) => {
             message={message}
           />
           <ButtonPega
-            customStlye={firm.name}
+            customStlye={company.name}
             onClick={pressStartButton}
             buttonLabel="Neuen Schadensfall starten"
             isVisible={isVisible.startButton}
           />
           <ButtonPega
-            customStlye={firm.name}
+            customStlye={company.name}
             onClick={pressContinueButton}
             buttonLabel="Bisherigen Schadensfall weiterbearbeiten"
             isVisible={isVisible.openButton}
@@ -146,13 +146,13 @@ const Pega = ({ selectedFirmName }) => {
 
           <PegaEmbed
             isVisible={isVisible.pegaEmbed}
-            firm={firm}
+            company={company}
             pegaAction={pegaAction}
             isDevVersion = {isDevVersion}
           />
 
           <ButtonPega
-            customStlye={firm.name}
+            customStlye={company.name}
             onClick={pressStopButton}
             buttonLabel="Schadensliste schließen"
             isVisible={isVisible.closeButton}

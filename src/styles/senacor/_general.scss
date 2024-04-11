@@ -8,7 +8,7 @@
    }
 
 
-@mixin style_default{
+@mixin app{
     @include a;
     color: $senacorWhite;
     background-color: $senacorGrey;

@@ -16,7 +16,7 @@
 
 
 //find in app.scss, which is general 
-@mixin style_default{
+@mixin app{
     @include a;
     color: $zurichBlue;
     background-color: $zurichBeige;

@@ -1,0 +1,1 @@
+module.exports.companies = ["zurich","senacor","allianz","uniqa"];

@@ -1,12 +1,12 @@
 import React from "react";
-import * as firms from "../../records/insuranceFirms";
+import * as companies from "../../records/companies";
 
-function Home({ selectedFirmName }) {
+function Home({ selectedCompanyName }) {
 
  
-  const seF = selectedFirmName;
-  const firm = firms[seF];
-  const name = firm.fullName
+
+  const company = companies[selectedCompanyName];
+  const name = company.fullName
 
   return (
    <>

@@ -1,18 +1,18 @@
 import { React, useState, useEffect } from "react";
-import * as selectedFirms from "../../records/insuranceFirms";
+import * as companies from "../../records/companies";
 import "./nav.scss";
 
 import { Link, useLocation } from "react-router-dom";
 
-function Navbar({ selectedFirmName }) {
+function Navbar({ selectedCompanyName }) {
   const [currentPath, setCurrentPath] = useState("");
   const location = useLocation();
 
-  const firms = selectedFirms;
+
 
 
   // -------------------------------------------------------------
-  const selectedFirm = firms[selectedFirmName];
+  const selectedCompany = companies[selectedCompanyName];
 
   useEffect(() => {
     setCurrentPath(location.pathname);
@@ -23,7 +23,7 @@ function Navbar({ selectedFirmName }) {
       <div className="nav-container">
         <header role="banner" className="header-box">
           <a href="http://localhost:3000">
-            <img src={`${selectedFirm.imageSrc}`} alt="Logo" className="logo" />
+            <img src={`${selectedCompany.imageSrc}`} alt="Logo" className="logo" />
           </a>
           <ul className="upper-nav">
    

@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "createFirm": "node scripts/createFirm.js"
+    "createCompany": "node scripts/createCompany.js"
   },
   "eslintConfig": {
     "extends": [

@@ -61,7 +61,7 @@ const updateCompaniesList = async (companies, companyName) => {
   )};`;
   try {
     await fs.writeFile(companyRecordFile, updatedCompaniesList);
-    console.log(`${companyRecordFile} hinzugefügt.`);
+    console.log(`${companyName} hinzugefügt.`);
   } catch (err) {
     console.error(err);
   }
@@ -69,21 +69,18 @@ const updateCompaniesList = async (companies, companyName) => {
 
 // -------------------
 
-const updateCompaniesAttributes = async (companyName) =>{
- 
-  const companyRecordFile = "src/records/companies.js";
-  const updatedCompaniesList = `module.exports.companies = ${JSON.stringify(
-    companies
-  )};`;
+const updateCompaniesAttributes = async (companyName) => {
+  const companyRecordFile = "src/records/companies.js";  
+  const updatedCompany = createCompanyObj(companyName);
   try {
-    await fs.writeFile(companyRecordFile, updatedCompaniesList);
-    console.log(`${companyRecordFile} hinzugefügt.`);
+     let data = await fs.readFile(companyRecordFile, 'utf8')
+    await fs.writeFile(companyRecordFile, data + updatedCompany, 'utf8');
+    console.log(`${companyName} hinzugefügt.`);
   } catch (err) {
     console.error(err);
   }
 };
 
-}
 
 // -------------------
 
@@ -152,3 +149,33 @@ const buildAppSccFileContent = (companies) => {
 const creatingFolderFailedErrorMessage = (error) => {
   console.error("Konnte Ordner / Dateien nicht erstellen:", error);
 };
+
+// ----------------
+
+const createCompanyObj = ( companyName) =>{
+  const randomID = Math.floor(Math.random() * (1000 - 5 + 1)) + 5;
+return (
+ `export const ${companyName} = {
+  id: ${randomID},
+  name: '${companyName}',
+  fullName: '${companyName} Versicherung',
+  loginLabelUser: '',
+  loginPlaceholderUser: 'Benutzername',
+  loginLabelPassword: '',
+  loginPlaceholderPassword: 'Passwort',
+  loginButtonStart: 'Jetzt anmelden',
+  loginForgotName: 'Benutzername vergessen?',
+  loginForgotPassword: 'Passwort neu vergeben?',
+  loginHelp: '',
+  loginNewMemberLabel: 'Noch kein ${companyName}-Konto?',
+  loginNewMemberButton: 'Registrieren',
+  imageSrc: "https://siderite.dev/Posts/files/placeholder.com-logo1_637146769278368505.jpg",
+  icon1 : '',
+  newRegDesign: 'designButton',
+  loginDesignOrder: ["FormHeader", "LoginInput", "LoginButton", "NewRegistration", "ForgotSomething"],
+  pegaAppAlias: "z-claim",
+  clientId:"67345646815270313102",
+  theme: theme.regular
+}
+`)
+}
