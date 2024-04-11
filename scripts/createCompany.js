@@ -15,10 +15,11 @@ inquirer
     
     // -----!!!  MAIN FUNCTIONS  !!!-----
 
-    createScssFiles(companyName);
-    updateCompaniesList(companies, companyName);
-    updateCompaniesAttributes(companyName);
-    updateAppScss(companies);
+    // createScssFiles(companyName);
+    createHeader(companyName);
+    // updateCompaniesList(companies, companyName);
+    // updateCompaniesAttributes(companyName);
+    // updateAppScss(companies);
     
   })
   .catch((error) => {
@@ -120,6 +121,26 @@ const createScssFiles = (companyName) => {
 };
 
 // ----------------
+const createHeader = (companyName) =>{
+  const reactName = companyName.charAt(0).toUpperCase() + companyName.slice(1);
+  const headerContent = createHeaderContent(reactName);
+  const filePath = `src/pages/login/components/headers/${reactName}.js`;
+
+  fs.writeFile(filePath, headerContent)
+  .then(() => {
+    console.log(`${reactName}.js wurde erfolgreich erstellt.`);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+};
+
+
+
+
+// ----------------
+
+
 
 const buildAppSccFileContent = (companies) => {
   let useAsLines = "";
@@ -158,28 +179,46 @@ const creatingFolderFailedErrorMessage = (error) => {
 
 const createCompanyObj = ( companyName) =>{
   const randomID = Math.floor(Math.random() * (1000 - 5 + 1)) + 5;
-return (
- `export const ${companyName} = {
-  id: ${randomID},
-  name: '${companyName}',
-  fullName: '${companyName} Versicherung',
-  loginLabelUser: '',
-  loginPlaceholderUser: 'Benutzername',
-  loginLabelPassword: '',
-  loginPlaceholderPassword: 'Passwort',
-  loginButtonStart: 'Jetzt anmelden',
-  loginForgotName: 'Benutzername vergessen?',
-  loginForgotPassword: 'Passwort neu vergeben?',
-  loginHelp: '',
-  loginNewMemberLabel: 'Noch kein ${companyName}-Konto?',
-  loginNewMemberButton: 'Registrieren',
-  imageSrc: "https://siderite.dev/Posts/files/placeholder.com-logo1_637146769278368505.jpg",
-  icon1 : '',
-  newRegDesign: 'designButton',
-  loginDesignOrder: ["FormHeader", "LoginInput", "LoginButton", "NewRegistration", "ForgotSomething"],
-  pegaAppAlias: "z-claim",
-  clientId:"67345646815270313102",
-  theme: theme.regular
+  return (
+    `export const ${companyName} = {
+      id: ${randomID},
+      name: '${companyName}',
+      fullName: '${companyName} Versicherung',
+      loginLabelUser: '',
+      loginPlaceholderUser: 'Benutzername',
+      loginLabelPassword: '',
+      loginPlaceholderPassword: 'Passwort',
+      loginButtonStart: 'Jetzt anmelden',
+      loginForgotName: 'Benutzername vergessen?',
+      loginForgotPassword: 'Passwort neu vergeben?',
+      loginHelp: '',
+      loginNewMemberLabel: 'Noch kein ${companyName}-Konto?',
+      loginNewMemberButton: 'Registrieren',
+      imageSrc: "https://siderite.dev/Posts/files/placeholder.com-logo1_637146769278368505.jpg",
+      icon1 : '',
+      newRegDesign: 'designButton',
+      loginDesignOrder: ["FormHeader", "LoginInput", "LoginButton", "NewRegistration", "ForgotSomething"],
+      pegaAppAlias: "z-claim",
+      clientId:"67345646815270313102",
+      theme: theme.regular
+    }
+    `)
+  }
+  
+  // ----------------
+
+const createHeaderContent = (reactName) =>{
+  return(`import React from "react";
+
+  const ${reactName}FH = () => {
+    return (
+      <div>
+        <h1>my${reactName} Login</h1>
+      </div>
+    );
+  };
+  
+  export default ${reactName}FH;
+  `)
 }
-`)
-}
+  
