@@ -15,11 +15,11 @@ inquirer
     
     // -----!!!  MAIN FUNCTIONS  !!!-----
 
-    // createScssFiles(companyName);
+    createScssFiles(companyName);
     createHeader(companyName);
-    // updateCompaniesList(companies, companyName);
-    // updateCompaniesAttributes(companyName);
-    // updateAppScss(companies);
+    updateCompaniesList(companies, companyName);
+    updateCompaniesAttributes(companyName);
+    updateAppScss(companies);
     
   })
   .catch((error) => {
