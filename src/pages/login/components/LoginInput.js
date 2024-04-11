@@ -1,5 +1,5 @@
 import React from 'react'
-import "./loginInput.scss";
+
 
 const LoginInput = (props) => {
 
@@ -13,7 +13,6 @@ const LoginInput = (props) => {
         
         <label htmlFor="txtUserID">{selectedCompany.loginLabelUser}</label>
           <input placeholder={selectedCompany.loginPlaceholderUser} type="text" id="txtUserID" name="UserIdentifier"  required />
-          <br /><br />
           <label htmlFor="txtPassword">{selectedCompany.loginLabelPassword}</label>
           <input placeholder={selectedCompany.loginPlaceholderPassword} type="password" id="txtPassword" name="Password"  required />
           <span 
