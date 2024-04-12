@@ -10,18 +10,17 @@ export const firebaseConfig = {
 
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
 
-  authDomain: "pegaapp-7dc1e.firebaseapp.com",
+  authDomain: "pegaapp-5575e.firebaseapp.com",
 
-  projectId: "pegaapp-7dc1e",
+  projectId: "pegaapp-5575e",
 
-  storageBucket: "pegaapp-7dc1e.appspot.com",
+  storageBucket: "pegaapp-5575e.appspot.com",
 
-  messagingSenderId: "1035404571904",
+  messagingSenderId: "334518320174",
 
-  appId: "1:1035404571904:web:0afcaa7c38cd6e59d92fe5",
+  appId: "1:334518320174:web:970dff531784534e8273bf",
 
-  measurementId: "G-FWLWMFN224"
-
+ 
 };
 
 
