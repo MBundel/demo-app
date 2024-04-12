@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-const PegaEmbed = ({ pegaAction, firm, isVisible, isDevVersion }) => {
+const PegaEmbed = ({ pegaAction, company, isVisible, isDevVersion }) => {
 
 
 
@@ -43,11 +43,11 @@ const PegaEmbed = ({ pegaAction, firm, isVisible, isDevVersion }) => {
           casePage="assignment"
           pageID="pyWorklist"
           pageClass="Data-Portal"
-          appAlias={firm.pegaAppAlias}
+          appAlias={company.pegaAppAlias}
           pegaServerUrl="https://senacor01.pegalabs.io/prweb/"
           staticContentUrl="https://release.constellation.pega.io/8.23.1-266/react/prod/"
           authService="pega"
-          clientId={firm.clientId}
+          clientId={company.clientId}
           // clientId="23479118762171457969"
           deferLoad="false"
           // userIdentifier="AL864428"
@@ -56,7 +56,7 @@ const PegaEmbed = ({ pegaAction, firm, isVisible, isDevVersion }) => {
           password="UGVnYTEyMzQ1IQ=="
           assignmentHeader={isDevVersion}
           style={{ width: responsiveness.width}}
-          theme={firm.theme}
+          theme={company.theme}
         ></pega-embed>
         
       ) : (

@@ -20,27 +20,27 @@
     max-width: 1480px;
     margin: auto;
   }
-  // &_container {
+  &_container {
 
 
-  //   &_uniqa {
+    &_uniqa {
    
-  //     background-color: $uniqaWhite;
-  //   }
-  //   &_allianz {
+      background-color: $uniqaWhite;
+    }
+    &_allianz {
      
-  //     background-color: $allianzWhite;
-  //   }
-  //   &_zurich {
+      background-color: $allianzWhite;
+    }
+    &_zurich {
  
-  //     background-color: $zurichBeige;
-  //   }
-  //   &_senacor {
+      background-color: $zurichBeige;
+    }
+    &_senacor {
     
-  //     background-color: $senacorGrey;
-  //     color: $senacorWhite;
-  //   }
-  // }
+      background-color: $senacorGrey;
+      color: $senacorWhite;
+    }
+  }
 }
 
 
