@@ -89,6 +89,3 @@ export const senacor = {
     clientId:"67345646815270313102",
     theme: theme.senacor
 }
-
-
-
