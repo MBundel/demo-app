@@ -38,8 +38,7 @@ const PegaEmbed = ({ pegaAction, company, isVisible, isDevVersion }) => {
           id="theEmbed"
           action={pegaAction}
           caseTypeID="Org-CRMInsurance-Work-Schaden"
-          // caseID={pegaAction === "createCase" ? "" : caseID}
-          assignmentID="ASSIGN-WORKLIST ORG-CRMINSURANCE-WORK S-18058!SCHADENMELDEN"
+         
           casePage="assignment"
           pageID="pyWorklist"
           pageClass="Data-Portal"
