@@ -180,7 +180,7 @@ const creatingFolderFailedErrorMessage = (error) => {
 const createCompanyObj = ( companyName) =>{
   const randomID = Math.floor(Math.random() * (1000 - 5 + 1)) + 5;
   return (
-    `export const ${companyName} = {
+    `\nexport const ${companyName} = {
       id: ${randomID},
       name: '${companyName}',
       fullName: '${companyName} Versicherung',

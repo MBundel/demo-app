@@ -20,7 +20,7 @@ export const allianz = {
     newRegDesign: "designLink",
     loginDesignOrder: ["FormHeader", "LoginInput", "ForgotSomething", "LoginButton", "NewRegistration"],
     pegaAppAlias: "a-claim",
-    clientId:"13322926513876424761",
+    clientId:"62963457690160829672",
     theme: theme.allianz
 }
 export const uniqa = {

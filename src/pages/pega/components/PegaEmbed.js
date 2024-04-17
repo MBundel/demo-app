@@ -28,7 +28,7 @@ const PegaEmbed = ({ pegaAction, company, isVisible, isDevVersion }) => {
 
   const responsiveness = {
     width: windowSize.width < 700 ? '100%' :  '700px', 
-    // height: windowSize.height < 700 ? '100%' :  '500px'
+
   };
 
   return (
@@ -36,7 +36,9 @@ const PegaEmbed = ({ pegaAction, company, isVisible, isDevVersion }) => {
       {isVisible ? (
         <pega-embed
           id="theEmbed"
-          action={pegaAction}        
+          action={pegaAction}
+          caseTypeID="Org-CRMInsurance-Work-Schaden"
+          assignmentID="ASSIGN-WORKLIST ORG-CRMINSURANCE-WORK S-18058!SCHADENMELDEN"
           casePage="assignment"
           pageID="pyWorklist"
           pageClass="Data-Portal"
@@ -45,9 +47,9 @@ const PegaEmbed = ({ pegaAction, company, isVisible, isDevVersion }) => {
           staticContentUrl="https://release.constellation.pega.io/8.23.1-266/react/prod/"
           authService="pega"
           clientId={company.clientId}
-          deferLoad="false"       
+          deferLoad="false"
           userIdentifier="ZU864428"
-          password="UGVnYTEyMzQ1IQ=="
+          password="UGVnYVByYWN0aWNlMTIzNCE="
           assignmentHeader={isDevVersion}
           style={{ width: responsiveness.width}}
           theme={company.theme}

@@ -40,7 +40,8 @@ const Login = ({ selectedCompanyName }) => {
           noValidate
           target="_blank"
         >
-          <form>{order.map((component) => components[component])}</form>
+          <form>
+            {order.map((component) => components[component])}</form>
         </form>
       </div>
     </div>
