@@ -36,9 +36,7 @@ const PegaEmbed = ({ pegaAction, company, isVisible, isDevVersion }) => {
       {isVisible ? (
         <pega-embed
           id="theEmbed"
-          action={pegaAction}
-          caseTypeID="Org-CRMInsurance-Work-Schaden"
-         
+          action={pegaAction}        
           casePage="assignment"
           pageID="pyWorklist"
           pageClass="Data-Portal"
@@ -47,10 +45,7 @@ const PegaEmbed = ({ pegaAction, company, isVisible, isDevVersion }) => {
           staticContentUrl="https://release.constellation.pega.io/8.23.1-266/react/prod/"
           authService="pega"
           clientId={company.clientId}
-          // clientId="23479118762171457969"
-          deferLoad="false"
-          // userIdentifier="AL864428"
-          // password="UGVnYTEyMzQ1IQ=="
+          deferLoad="false"       
           userIdentifier="ZU864428"
           password="UGVnYTEyMzQ1IQ=="
           assignmentHeader={isDevVersion}
