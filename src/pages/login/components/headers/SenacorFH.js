@@ -6,7 +6,7 @@ const SenacorFH = () => {
   return (
     <div className='head-container'>
   
-        <img className='img' src="./img/senacorVersicherung.png" alt='senacor versicherung'/>
+        <img className='img' src="./img/senacorVersicherung.jpeg" alt='senacor versicherung'/>
 
 
     </div>
